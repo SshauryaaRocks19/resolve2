@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import Link from 'next/link';
 
 interface FloatingMenuProps {
@@ -8,7 +8,7 @@ interface FloatingMenuProps {
     onClose: () => void;
 }
 
-const menuVariants = {
+const menuVariants: Variants = {
     closed: {
         opacity: 0,
         scale: 0.95,
@@ -35,7 +35,7 @@ const items = [
     { title: 'Home', href: '/' },
     { title: 'Prioritization engine', href: '#' },
     { title: 'Revise', href: '#' },
-    { title: 'Prerequisite Gap Mapper', href: '#' },
+    { title: 'Prerequisite Gap Mapper', href: '/gap-analysis' },
     { title: 'Plan reality check', href: '#' },
     { title: 'About', href: '#' },
 ];
