@@ -33,7 +33,7 @@ const menuVariants: Variants = {
 
 const items = [
     { title: 'Home', href: '/' },
-    { title: 'Prioritization engine', href: '#' },
+    { title: 'Prioritization engine', href: '/prioritization' },
     { title: 'Revise', href: '#' },
     { title: 'Prerequisite Gap Mapper', href: '/gap-analysis' },
     { title: 'Plan reality check', href: '#' },

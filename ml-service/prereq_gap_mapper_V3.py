@@ -30,7 +30,7 @@ class ConceptExtractor:
         # Compile regex patterns once for performance
         self.concept_patterns = [
             re.compile(r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*(?:\s+(?:theorem|algorithm|method|principle|law|rule|equation|formula|model|technique|process))\b'),
-            re.compile(r'\b(?:linear|binary|depth|breadth|dynamic|greedy|divide|quantum|neural|machine|deep)\s+[a-z]+(?:\s+[a-z]+)*\b', re.IGNORECASE),
+            re.compile(r'\b(?:linear|binary|depth|breadth|dynamic|greedy|divide|quantum|neural|machine|deep|gradient|stochastic|genetic|evolutionary)\s+[a-z]+(?:\s+[a-z]+)*\b', re.IGNORECASE),
             re.compile(r'\b[A-Z]{2,}\b'),
         ]
         
@@ -43,31 +43,60 @@ class ConceptExtractor:
         
         # Domain-specific keywords for categorization
         self.domain_keywords = {
-            'mathematics': {'calculus', 'algebra', 'geometry', 'statistics', 'probability', 'theorem', 'equation'},
-            'programming': {'algorithm', 'data structure', 'coding', 'programming', 'function', 'class', 'loop'},
-            'ml_ai': {'neural network', 'machine learning', 'deep learning', 'optimization', 'gradient', 'model'},
-            'data_science': {'analysis', 'visualization', 'regression', 'classification', 'clustering'},
+            'mathematics': {'calculus', 'algebra', 'geometry', 'statistics', 'probability', 'theorem', 'equation', 'logic', 'formula'},
+            'programming': {'algorithm', 'data structure', 'coding', 'programming', 'function', 'class', 'loop', 'compiler', 'interpreter', 'preprocessor', 'linker', 'compilation', 'execution', 'token', 'keyword', 'identifier', 'constant', 'variable', 'data type', 'string', 'pointer', 'array', 'structure', 'union', 'file'},
+            'ml_ai': {'neural network', 'machine learning', 'deep learning', 'optimization', 'gradient', 'model', 'backpropagation', 'regression', 'classification', 'clustering', 'ai', 'gpt', 'llm', 'transformer'},
+            'data_science': {'analysis', 'visualization', 'regression', 'classification', 'clustering', 'data mining'},
+            'physics': {'wave', 'longitudinal', 'transverse', 'speed', 'velocity', 'displacement', 'superposition', 'reflection', 'standing wave', 'harmonic', 'beat', 'amplitude', 'frequency', 'period', 'wavelength', 'oscillation', 'motion', 'energy', 'force', 'acceleration', 'momentum'},
         }
+        
+        # Flatten domain keywords for direct extraction
+        self.known_concepts = set()
+        for keywords in self.domain_keywords.values():
+            self.known_concepts.update(keywords)
     
     def extract_concepts(self, text: str) -> List[str]:
-        """Extract key concepts from text"""
-        # Limit text length for performance (first 10000 chars)
+        """Extract key concepts from text, preserving order"""
+        # Limit text length for performance
         text = text[:10000] if len(text) > 10000 else text
+        text_lower = text.lower()
         
-        concepts = set()
+        # Normalize common variations
+        text_lower = text_lower.replace('datatype', 'data type')
+        text_lower = text_lower.replace('programing', 'programming')
+        text_lower = text_lower.replace('modeling', 'modelling')
         
-        # Pattern-based extraction with compiled regex
+        # Store matches as (start_index, concept_text)
+        matches = []
+        
+        # 1. Regex patterns
         for pattern in self.concept_patterns:
-            matches = pattern.findall(text)
-            concepts.update([m.lower() if isinstance(m, str) else m for m in matches])
+            for match in pattern.finditer(text):
+                matches.append((match.start(), match.group().lower()))
         
-        # Extract capitalized phrases (likely concepts) - limited to first 5000 chars
+        # 2. Known concepts (domain keywords)
+        for concept in self.known_concepts:
+            # Find all occurrences of the concept
+            for m in re.finditer(r'\b' + re.escape(concept) + r'\b', text_lower):
+                matches.append((m.start(), concept))
+                
+        # 3. Capitalized phrases
         cap_text = text[:5000]
-        cap_phrases = re.findall(r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,3}\b', cap_text)
-        concepts.update([p.lower() for p in cap_phrases])
+        for m in re.finditer(r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,3}\b', cap_text):
+            matches.append((m.start(), m.group().lower()))
+            
+        # Sort by position
+        matches.sort(key=lambda x: x[0])
         
-        # Limit number of concepts for performance
-        return list(concepts)[:100]
+        # Dedup preserving order
+        unique_concepts = []
+        seen = set()
+        for _, concept in matches:
+            if concept not in seen:
+                seen.add(concept)
+                unique_concepts.append(concept)
+                
+        return unique_concepts[:100]
     
     def extract_prerequisites(self, text: str) -> List[Tuple[str, str]]:
         """Extract prerequisite relationships from text"""
