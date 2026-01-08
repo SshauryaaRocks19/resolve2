@@ -90,7 +90,8 @@
   --card-foreground: oklch(0.98 0.01 250);
   --popover: oklch(0.18 0.05 270);
   --popover-foreground: oklch(0.98 0.01 250);
-  --primary: oklch(0.7 0.15 220); /* Neon Cyan-Blue */
+  --primary: oklch(0.7 0.15 220);
+  /* Neon Cyan-Blue */
   --primary-foreground: oklch(0.15 0.05 270);
   --secondary: oklch(0.25 0.1 280);
   --secondary-foreground: oklch(0.98 0.01 250);
@@ -121,7 +122,18 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
+
+  html,
+  body,
+  input,
+  textarea,
+  select {
+    @apply font-serif;
+  }
+
+  /* Exceptions: Buttons and specific .font-sans elements (like WIN text) */
+  button,
+  .font-sans {
+    font-family: var(--font-sans);
   }
 }

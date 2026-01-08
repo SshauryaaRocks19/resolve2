@@ -4,6 +4,8 @@ import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import Dither from '@/components/Dither';
 import SplitText from '@/components/SplitText';
+import StudyHero from '@/components/StudyHero';
+import ProgressSection from '@/components/ProgressSection';
 
 export default function Home() {
   const { theme } = useTheme();
@@ -40,7 +42,7 @@ export default function Home() {
         </div>
         <SplitText
           text="WIN"
-          className="text-8xl font-black tracking-tighter text-primary dark:text-blue-400 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] [text-shadow:0_0_2px_rgba(0,0,0,0.5)] dark:[text-shadow:0_0_2px_rgba(255,255,255,0.5)] sm:text-9xl md:text-[10rem]"
+          className="text-8xl font-black font-sans tracking-tighter text-primary dark:text-blue-400 drop-shadow-[0_0_15px_rgba(59,130,246,0.5)] [text-shadow:0_0_2px_rgba(0,0,0,0.5)] dark:[text-shadow:0_0_2px_rgba(255,255,255,0.5)] sm:text-9xl md:text-[10rem]"
           delay={100}
           duration={0.6}
           ease="power3.out"
@@ -61,17 +63,37 @@ export default function Home() {
       </section>
 
       {/* "No more conceptual gaps" Section */}
-      <section className="flex min-h-[50vh] w-full items-center justify-center bg-muted px-4 text-center">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-          No more Conceptual Gaps!
-        </h2>
-      </section>
+      <StudyHero />
 
-      {/* "Isn't it so simple" Section */}
-      <section className="flex min-h-[50vh] w-full items-center justify-center bg-background px-4 text-center">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-          Isn&apos;t it so simple?
+      {/* Progress Section */}
+      <ProgressSection />
+
+      {/* "Continue studying" Section */}
+      <section className="flex min-h-[50vh] w-full flex-col items-center justify-center bg-background px-4 py-16 text-center space-y-8">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-serif">
+          Continue studying:
         </h2>
+
+        <div className="w-full max-w-4xl space-y-4">
+          <div className="flex items-center justify-between px-2">
+            <span className="text-xl font-medium font-serif opacity-70">Up Next</span>
+            <span className="text-2xl font-bold font-serif">Jacobian matrix</span>
+          </div>
+
+          <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 shadow-2xl">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/bohL918kXQk?list=PLSQl0a2vh4HC5feHa6Rc5c0wbRTx56nF7"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="absolute inset-0"
+            ></iframe>
+          </div>
+        </div>
       </section>
     </main>
   );

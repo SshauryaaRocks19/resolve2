@@ -3,3 +3,5 @@ uvicorn
 numpy
 onnxruntime
 pydantic
+requests
+python-multipart

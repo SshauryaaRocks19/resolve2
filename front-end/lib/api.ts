@@ -19,3 +19,37 @@ export async function analyzeGap(data: any) {
 
     return response.json();
 }
+
+export async function prioritizeTopics(data: FormData) {
+    // Fallback to localhost:8000 if env var is missing, for dev convenience
+    // explicitly forcing the port 8000 if the env var seems to be pointing to nextjs/api proxy or is undefined
+    const baseUrl = 'http://localhost:8000';
+
+    const response = await fetch(`${baseUrl}/prioritize`, {
+        method: "POST",
+        body: data,
+    });
+
+    if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Failed to prioritize: ${errorText}`);
+    }
+
+    return response.json();
+}
+
+export async function generateRevisionContent(data: FormData) {
+    const baseUrl = 'http://localhost:8000';
+
+    const response = await fetch(`${baseUrl}/revision-tool`, {
+        method: "POST",
+        body: data,
+    });
+
+    if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`Failed to generate revision content: ${errorText}`);
+    }
+
+    return response.json();
+}

@@ -2,13 +2,14 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Loader2, Sparkles, TrendingUp, AlertTriangle, BookOpen, Target, BrainCircuit } from 'lucide-react';
+import { Loader2, Sparkles, TrendingUp, AlertTriangle, BookOpen, Target, BrainCircuit } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { prioritizeTopics } from '@/lib/api';
 
-// Mock Interfaces
+// Interfaces matching the expected backend response or mock data
 interface PrioritizedTopic {
     topic: string;
-    priority_score: number; // 0-100
+    priority_score: number;
     category: 'High Return' | 'Quick Win' | 'Core Concept' | 'Bonus' | 'Deprioritize';
     reasoning: string;
     difficulty: 'Easy' | 'Medium' | 'Hard';
@@ -29,78 +30,31 @@ interface AnalysisResult {
 }
 
 export default function PrioritizationPage() {
-    // Input States
     const [syllabus, setSyllabus] = useState('');
     const [examName, setExamName] = useState('');
-    const [pastPapers, setPastPapers] = useState('');
-
-    // Analysis States
     const [loading, setLoading] = useState(false);
     const [results, setResults] = useState<AnalysisResult | null>(null);
+    const [error, setError] = useState<string | null>(null);
 
-    // Mock Analysis Function
-    const handleAnalyze = () => {
+    const handleAnalyze = async () => {
         if (!syllabus || !examName) return;
 
         setLoading(true);
-        // Simulate API delay
-        setTimeout(() => {
-            const mockResults: AnalysisResult = {
-                topics: [
-                    {
-                        topic: "Neural Networks & Backpropagation",
-                        priority_score: 95,
-                        category: "Core Concept",
-                        difficulty: "Hard",
-                        avg_marks: 15,
-                        reasoning: "Consistently appears in Section C (Long Answer). Foundation for 40% of the paper."
-                    },
-                    {
-                        topic: "Linear Regression Basics",
-                        priority_score: 88,
-                        category: "Quick Win",
-                        difficulty: "Easy",
-                        avg_marks: 8,
-                        reasoning: "Easiest topic with guaranteed 5-8 marks. High ROI."
-                    },
-                    {
-                        topic: "Gradient Descent Variants",
-                        priority_score: 75,
-                        category: "High Return",
-                        difficulty: "Medium",
-                        avg_marks: 10,
-                        reasoning: "Trending upward in last 3 years papers."
-                    },
-                    {
-                        topic: "History of AI",
-                        priority_score: 20,
-                        category: "Deprioritize",
-                        difficulty: "Easy",
-                        avg_marks: 2,
-                        reasoning: "Rarely asked. Low mark density."
-                    },
-                    {
-                        topic: "SVM Kernels",
-                        priority_score: 60,
-                        category: "Bonus",
-                        difficulty: "Hard",
-                        avg_marks: 5,
-                        reasoning: "Good for differentiation but time-consuming."
-                    }
-                ],
-                summary: {
-                    total_topics: 12,
-                    high_yield_count: 3,
-                    predicted_difficulty: "Moderate"
-                },
-                strategy: {
-                    focus_areas: ["Neural Networks", "Optimization Algorithms"],
-                    quick_wins: ["Linear Regression", "Basic Definitions"]
-                }
-            };
-            setResults(mockResults);
+        setError(null);
+
+        try {
+            const formData = new FormData();
+            formData.append('syllabus', syllabus);
+            formData.append('exam_name', examName);
+
+            const data = await prioritizeTopics(formData);
+            setResults(data);
+
+        } catch (err: any) {
+            setError(err.message || 'Something went wrong');
+        } finally {
             setLoading(false);
-        }, 2000);
+        }
     };
 
     return (
@@ -117,7 +71,7 @@ export default function PrioritizationPage() {
                         PRIORITIZATION <span className="text-primary">ENGINE</span>
                     </h1>
                     <p className="text-xl text-muted-foreground font-light max-w-2xl">
-                        Stop studying blindly. Let AI analyze trends and difficulty to tell you exactly what to study for maximum marks in minimum time.
+                        Enter your exam details and syllabus. AI will crunch the numbers to find the easiest marks.
                     </p>
                 </header>
 
@@ -133,10 +87,10 @@ export default function PrioritizationPage() {
 
                             <div className="space-y-4">
                                 <div>
-                                    <label className="block text-sm font-medium mb-2">Exam Name / Format</label>
+                                    <label className="block text-sm font-medium mb-2">Exam Name / Format *</label>
                                     <input
                                         type="text"
-                                        placeholder="e.g. CS229 Final, JEE Advanced, USMLE Step 1"
+                                        placeholder="e.g. CS229 Final, JEE Advanced"
                                         className="w-full p-3 rounded-lg border bg-background focus:ring-2 focus:ring-primary outline-none transition-all"
                                         value={examName}
                                         onChange={(e) => setExamName(e.target.value)}
@@ -144,24 +98,12 @@ export default function PrioritizationPage() {
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium mb-2">Syllabus</label>
+                                    <label className="block text-sm font-medium mb-2">Syllabus / Context *</label>
                                     <textarea
-                                        placeholder="Paste your full syllabus here..."
-                                        className="w-full h-40 p-3 rounded-lg border bg-background resize-none focus:ring-2 focus:ring-primary outline-none transition-all"
+                                        placeholder="Paste your syllabus topics here..."
+                                        className="w-full h-48 p-3 rounded-lg border bg-background resize-none focus:ring-2 focus:ring-primary outline-none transition-all"
                                         value={syllabus}
                                         onChange={(e) => setSyllabus(e.target.value)}
-                                    />
-                                </div>
-
-                                <div>
-                                    <label className="block text-sm font-medium mb-2">
-                                        Past Papers / Trends (Optional)
-                                    </label>
-                                    <textarea
-                                        placeholder="Paste text from past papers or specific trends you want to include..."
-                                        className="w-full h-24 p-3 rounded-lg border bg-background resize-none focus:ring-2 focus:ring-primary outline-none transition-all"
-                                        value={pastPapers}
-                                        onChange={(e) => setPastPapers(e.target.value)}
                                     />
                                 </div>
                             </div>
@@ -174,14 +116,20 @@ export default function PrioritizationPage() {
                                 {loading ? (
                                     <>
                                         <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                                        Crunching Numbers...
+                                        Analyzing...
                                     </>
                                 ) : (
                                     <>
-                                        Generatie Strategy <BrainCircuit className="w-5 h-5 ml-2" />
+                                        Generate Strategy <BrainCircuit className="w-5 h-5 ml-2" />
                                     </>
                                 )}
                             </Button>
+
+                            {error && (
+                                <div className="p-3 bg-destructive/10 text-destructive text-sm rounded-lg flex items-center gap-2">
+                                    <AlertTriangle className="w-4 h-4" /> {error}
+                                </div>
+                            )}
                         </div>
                     </div>
 
@@ -204,17 +152,16 @@ export default function PrioritizationPage() {
                                         <div className="text-2xl font-black text-primary">{results.summary.high_yield_count}</div>
                                     </div>
                                     <div className="p-5 bg-card border border-border rounded-xl">
-                                        <div className="text-sm text-muted-foreground mb-1">Est. Mark Coverage</div>
+                                        <div className="text-sm text-muted-foreground mb-1">Mark Coverage</div>
                                         <div className="text-2xl font-black text-green-500">~85%</div>
                                     </div>
                                 </div>
 
-                                {/* Matrix / Categories */}
+                                {/* Matrix */}
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    {/* Quick Wins */}
                                     <div className="bg-green-500/5 border border-green-500/20 p-5 rounded-xl">
                                         <h3 className="text-green-600 font-bold flex items-center gap-2 mb-3">
-                                            <Target className="w-5 h-5" /> Quick Wins (Study First)
+                                            <Target className="w-5 h-5" /> Quick Wins
                                         </h3>
                                         <ul className="list-disc list-inside space-y-1 text-sm opacity-80">
                                             {results.topics
@@ -224,10 +171,9 @@ export default function PrioritizationPage() {
                                         </ul>
                                     </div>
 
-                                    {/* Core Concepts */}
                                     <div className="bg-blue-500/5 border border-blue-500/20 p-5 rounded-xl">
                                         <h3 className="text-blue-600 font-bold flex items-center gap-2 mb-3">
-                                            <TrendingUp className="w-5 h-5" /> Core Concepts (High Value)
+                                            <TrendingUp className="w-5 h-5" /> Core Concepts
                                         </h3>
                                         <ul className="list-disc list-inside space-y-1 text-sm opacity-80">
                                             {results.topics
@@ -261,14 +207,14 @@ export default function PrioritizationPage() {
 
                                             <div className="flex flex-row md:flex-col gap-2 md:gap-1 pl-11 md:pl-0 md:items-end flex-shrink-0">
                                                 <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${topic.category === 'Quick Win' ? 'bg-green-500/10 text-green-600' :
-                                                        topic.category === 'Core Concept' ? 'bg-blue-500/10 text-blue-600' :
-                                                            topic.category === 'Deprioritize' ? 'bg-destructive/10 text-destructive' :
-                                                                'bg-secondary text-secondary-foreground'
+                                                    topic.category === 'Core Concept' ? 'bg-blue-500/10 text-blue-600' :
+                                                        topic.category === 'Deprioritize' ? 'bg-destructive/10 text-destructive' :
+                                                            'bg-secondary text-secondary-foreground'
                                                     }`}>
                                                     {topic.category}
                                                 </span>
                                                 <span className="text-xs text-muted-foreground font-medium">
-                                                    Results Impact: {topic.priority_score}/100
+                                                    Score: {topic.priority_score}
                                                 </span>
                                             </div>
                                         </div>
@@ -284,7 +230,7 @@ export default function PrioritizationPage() {
                                 <div className="text-center space-y-2 max-w-md">
                                     <h3 className="text-xl font-bold text-foreground">Ready to Strategize</h3>
                                     <p>
-                                        Enter your exam details and syllabus on the left. The AI will cross-reference trends to build your optimal study path.
+                                        Enter exams details and syllabus.
                                     </p>
                                 </div>
                             </div>
