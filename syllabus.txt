@@ -1,0 +1,22 @@
+Partial derivatives: Derivatives of multivariable functions
+Gradient and directional derivatives: Derivatives of multivariable functions
+Partial derivative and gradient (articles): Derivatives of multivariable functions
+Differentiating parametric curves: Derivatives of multivariable functions
+Multivariable chain rule: Derivatives of multivariable functions
+Curvature: Derivatives of multivariable functions
+Partial derivatives of vector-valued functions: Derivatives of multivariable functions
+Differentiating vector-valued functions (articles): Derivatives of multivariable functions
+Divergence: Derivatives of multivariable functions
+Curl: Derivatives of multivariable functions
+Divergence and curl (articles): Derivatives of multivariable functions
+Laplacian: Derivatives of multivariable functions
+Jacobian: Derivatives of multivariable functions
+
+Unit 3: Applications of multivariable derivatives
+Unit mastery: 0%
+Tangent planes and local linearization: Applications of multivariable derivatives
+Quadratic approximations: Applications of multivariable derivatives
+Optimizing multivariable functions: Applications of multivariable derivatives
+Optimizing multivariable functions (articles): Applications of multivariable derivatives
+Lagrange multipliers and constrained optimization: Applications of multivariable derivatives
+Constrained optimization (articles)

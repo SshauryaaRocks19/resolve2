@@ -7,6 +7,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/ui/mode-toggle"
 import { FloatingMenu } from "@/components/FloatingMenu"
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
 
 export function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -39,7 +40,14 @@ export function Navbar() {
 
                 {/* Right: Login + Theme Toggle */}
                 <div className="flex items-center gap-4">
-                    <Button variant="default">Log in</Button>
+                    <SignedOut>
+                        <SignInButton mode="modal">
+                            <Button variant="default">Log in</Button>
+                        </SignInButton>
+                    </SignedOut>
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
                     <ModeToggle />
                 </div>
             </div>

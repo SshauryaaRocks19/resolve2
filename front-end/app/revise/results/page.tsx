@@ -1,245 +1,336 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { BookOpen, PenTool, CheckCircle, RotateCw } from 'lucide-react';
-import { motion } from 'framer-motion';
+import {
+    ChevronDown,
+    ChevronUp,
+    Clock,
+    Play,
+    Pause,
+    RotateCcw,
+    Zap,
+    Target,
+    Brain,
+    BookOpen,
+    ArrowRight
+} from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 
-interface Flashcard {
-    front: string;
-    back: string;
-}
-
-interface QuizQuestion {
-    question: string;
-    options: string[];
-    correct: string;
-    explanation: string;
-}
-
-// HARDCODED DATA
-const FLASHCARDS: Flashcard[] = [
+// --- MOCK DATA BASED ON SYLLABUS ---
+const PRIORITY_TOPICS = [
     {
-        front: "What is the core definition of overfitting?",
-        back: "It is the phenomenon where a model performs well on training data but does not generalise well because it has detected patterns in the noise or sampling chance of the data."
+        unit: "Unit 2: Derivatives",
+        topics: [
+            { name: "Gradient and Directional Derivatives", gap: "High", reason: "Confusion between vector/scalar outputs." },
+            { name: "Jacobian Matrix", gap: "Critical", reason: "Foundational for change of variables." },
+            { name: "Multivariable Chain Rule", gap: "Medium", reason: "Tree diagram setup errors." }
+        ]
     },
     {
-        front: "Why are Decision Trees considered unstable?",
-        back: "Because they are very sensitive to small variations in the training data; even removing one instance or rotating the dataset can lead to a completely different tree structure."
-    },
-    {
-        front: "What is the vanishing gradient problem in deep RNNs?",
-        back: "During backpropagation through time, gradients tend to get smaller as they move to lower layers, causing the weights to remain unchanged and preventing the network from learning."
-    },
-    {
-        front: "What are the three components of a model's generalisation error?",
-        back: "1. Bias (wrong assumptions); 2. Variance (sensitivity to training noise); and 3. Irreducible error (noisiness of the data itself)."
-    },
-    {
-        front: "How do LSTM and GRU cells address RNN weaknesses?",
-        back: "They use gates to manage long-term memory, allowing the network to learn what to store, throw away, or read, which helps combat fading memory and vanishing gradients."
+        unit: "Unit 3: Applications",
+        topics: [
+            { name: "Lagrange Multipliers", gap: "High", reason: "Difficulty setting up constraint equations." },
+            { name: "Hessian Matrix & Optimization", gap: "Medium", reason: "Second derivative test misapplication." }
+        ]
     }
 ];
 
-const QUIZ: QuizQuestion[] = [
+const FLASHCARDS = [
     {
-        question: "What phenomenon is occurring when a model performs excellently on training data but fails to generalise to new instances?",
-        options: ["Underfitting", "Overfitting", "Regularisation", "Feature extraction"],
-        correct: "Overfitting",
-        explanation: "Overfitting happens when the model learns the noise in the training data rather than the underlying pattern."
+        front: "What is the geometric interpretation of the Gradient Vector ∇f at a point?",
+        back: "It points in the direction of steepest ascent. Its magnitude |∇f| is the rate of increase in that direction. It is normal to the level curve/surface."
     },
     {
-        question: "Which algorithm is notably sensitive to small variations in the training set, such as the removal of a single instance?",
-        options: ["Linear Regression", "Support Vector Machines", "Decision Trees", "Logistic Regression"],
-        correct: "Decision Trees",
-        explanation: "Decision Trees splits are highly dependent on the specific data points, making them unstable."
+        front: "Define the Jacobian Matrix for a function f: R^n -> R^m.",
+        back: "It is the m x n matrix of all first-order partial derivatives. J_ij = ∂f_i / ∂x_j. It represents the best linear approximation of the function near a point."
     },
     {
-        question: "In deep neural networks, what is the result of the vanishing gradient problem?",
-        options: ["The model parameters settle into a global minimum too quickly.", "Lower layer weights are left virtually unchanged during training.", "The algorithm diverges due to excessively large weight updates.", "The neurons stop outputting anything other than 1."],
-        correct: "Lower layer weights are left virtually unchanged during training.",
-        explanation: "Gradients become so small that the weight updates are negligible for early layers."
+        front: "State the formula for the Directional Derivative using the Gradient.",
+        back: "D_u f(x) = ∇f(x) • u, where u is a UNIT vector. If u is not a unit vector, you must normalize it first!"
     },
     {
-        question: "Why are Decision Trees described as \"non-parametric\" models?",
-        options: ["They do not use any mathematical parameters.", "They are based on fixed linear functions.", "The number of parameters is not determined prior to training.", "They are immune to overfitting."],
-        correct: "The number of parameters is not determined prior to training.",
-        explanation: "Non-parametric means the model structure grows with the data rather than having a fixed set of parameters."
+        front: "What is the condition for a critical point in multivariable optimization?",
+        back: "∇f(x, y) = <0, 0> (The gradient vector is zero) OR the gradient is undefined."
     },
     {
-        question: "What is a primary cause of overfitting in Machine Learning?",
-        options: ["The model is too simple for the underlying data structure.", "The model is too complex relative to the amount and noisiness of data.", "The training set is too large for the algorithm to process.", "The learning rate is set too low."],
-        correct: "The model is too complex relative to the amount and noisiness of data.",
-        explanation: "Complex models can memorize noise, leading to overfitting."
+        front: "How do Lagrange Multipliers work geometrically?",
+        back: "They find where the level curves of the objective function f are tangent to the constraint curve g (i.e., ∇f = λ∇g)."
+    }
+];
+
+const REVISION_STRATEGY = [
+    {
+        title: "Active Recall Protocol",
+        desc: "Don't just re-read notes. Close your eyes and attempt to derive the Jacobian for spherical coordinates from scratch. If you fail, peek, then try again in 10 minutes."
     },
     {
-        question: "Which problem arises when training an RNN over many time steps, making the unrolled network very deep?",
-        options: ["Axis sensitivity", "Vanishing or exploding gradients", "Internal Covariate Shift", "Data snooping bias"],
-        correct: "Vanishing or exploding gradients",
-        explanation: "Backpropagating through many time steps is mathematically equivalent to a very deep network."
+        title: "Feynman Technique",
+        desc: "Explain 'Directional Derivative' to an imaginary 5-year-old. If you use jargon like 'dot product' without defining it, you don't understand it simply enough."
     },
     {
-        question: "How can regularisation affect a model's performance?",
-        options: ["It increases the risk of the model detecting patterns in noise.", "It makes the model more complex to improve training accuracy.", "It constrains the model to make it simpler and reduce overfitting.", "It eliminates the need for a validation set."],
-        correct: "It constrains the model to make it simpler and reduce overfitting.",
-        explanation: "Regularisation adds a penalty for complexity."
-    },
-    {
-        question: "Which technique is used to combat the vanishing gradient problem by allowing the model to preserve important information across many time steps?",
-        options: ["Truncated backpropagation", "Using LSTM or GRU cells", "Global average pooling", "Zero padding"],
-        correct: "Using LSTM or GRU cells",
-        explanation: "LSTMs/GRUs have internal states specifically designed to maintain long-term dependencies."
-    },
-    {
-        question: "What is the effect of rotating a training set by 45 degrees when using a Decision Tree?",
-        options: ["It improves the generalisation of the model.", "It may result in an unnecessarily convoluted decision boundary.", "It has no effect because Decision Trees are rotation-invariant.", "It reduces the depth required for the tree."],
-        correct: "It may result in an unnecessarily convoluted decision boundary.",
-        explanation: "Decision trees split data along orthogonal axes (x=k, y=k), so diagonal boundaries are jagged and complex."
-    },
-    {
-        question: "If a model has a low training error but a high generalisation error, it is likely:",
-        options: ["Underfitting", "Overfitting", "Balanced", "Perfectly trained"],
-        correct: "Overfitting",
-        explanation: "High discrepancy between training and test error is the definition of overfitting."
+        title: "Interleaved Practice",
+        desc: "Mix Jacobian problems with Optimization problems. Don't do blocks of the same type. This mimics the exam environment."
     }
 ];
 
 export default function RevisionResultsPage() {
-    // Quiz State (Separate logic for the results page)
-    const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({});
-    const [showQuizResults, setShowQuizResults] = useState(false);
-
     return (
-        <div className="min-h-screen bg-background p-6 md:p-12 font-sans text-foreground">
-            <div className="max-w-7xl mx-auto space-y-12">
+        <div className="min-h-screen bg-white dark:bg-[#020617] text-black dark:text-white transition-colors duration-500 font-serif pb-24">
 
-                {/* Header */}
-                <header className="space-y-4 text-center md:text-left border-b pb-8">
-                    <Link href="/revise" className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-muted text-muted-foreground text-sm font-bold tracking-wide uppercase hover:bg-muted/80 mb-4">
-                        ← Back to Upload
+            {/* Header */}
+            <header className="border-b border-black/5 dark:border-white/5 bg-white/50 dark:bg-[#020617]/50 backdrop-blur-md sticky top-0 z-20">
+                <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+                    <Link href="/revise" className="text-sm font-bold font-sans opacity-60 hover:opacity-100 flex items-center gap-2">
+                        <ArrowRight className="w-4 h-4 rotate-180" /> Change Syllabus
                     </Link>
-                    <h1 className="text-4xl md:text-6xl font-black tracking-tighter">
-                        YOUR <span className="text-purple-500">RES-KIT</span>
-                    </h1>
-                    <p className="text-xl text-muted-foreground font-light max-w-2xl">
-                        Based on your weak spots in <strong className="text-foreground">Machine Learning Fundamentals, Decision Trees, and RNNs</strong>.
-                    </p>
-                </header>
-
-                <div className="grid grid-cols-1 lg:grid-cols-1 gap-12">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="space-y-16"
-                    >
-                        {/* Flashcards Section */}
-                        <div className="space-y-6">
-                            <h3 className="text-3xl font-bold flex items-center gap-3">
-                                <BookOpen className="w-8 h-8 text-purple-500" />
-                                Concept Flashcards
-                            </h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {FLASHCARDS.map((card, idx) => (
-                                    <FlashcardItem key={idx} card={card} index={idx} />
-                                ))}
-                            </div>
+                    <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 text-xs font-bold uppercase tracking-widest border border-green-500/20">
+                            <Zap className="w-3 h-3" />
+                            Plan Ready
                         </div>
+                    </div>
+                </div>
+            </header>
 
-                        {/* Quiz Section */}
-                        <div className="space-y-6 max-w-4xl">
-                            <h3 className="text-3xl font-bold flex items-center gap-3">
-                                <PenTool className="w-8 h-8 text-green-500" />
-                                Mastery Quiz
-                            </h3>
-                            <div className="space-y-6">
-                                {QUIZ.map((q, idx) => (
-                                    <div key={idx} className="bg-card border border-border p-6 rounded-xl shadow-sm">
-                                        <p className="font-medium text-lg mb-4">{idx + 1}. {q.question}</p>
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                            {q.options.map((opt, optIdx) => (
-                                                <div
-                                                    key={optIdx}
-                                                    onClick={() => !showQuizResults && setSelectedAnswers(prev => ({ ...prev, [idx]: opt }))}
-                                                    className={`p-4 rounded-lg border cursor-pointer transition-all flex items-center justify-between ${showQuizResults
-                                                        ? opt === q.correct
-                                                            ? 'bg-green-500/10 border-green-500 text-green-500 font-medium'
-                                                            : selectedAnswers[idx] === opt
-                                                                ? 'bg-destructive/10 border-destructive text-destructive'
-                                                                : 'opacity-50 border-border'
-                                                        : selectedAnswers[idx] === opt
-                                                            ? 'bg-purple-500/10 border-purple-500 text-purple-500 ring-1 ring-purple-500'
-                                                            : 'hover:bg-muted border-border hover:border-purple-200'
-                                                        }`}
-                                                >
-                                                    <span>{opt}</span>
-                                                    {showQuizResults && opt === q.correct && <CheckCircle className="w-5 h-5 text-green-500" />}
-                                                </div>
-                                            ))}
-                                        </div>
-                                        {showQuizResults && (
-                                            <div className="mt-4 text-sm text-foreground bg-muted/80 p-4 rounded-lg border-l-4 border-green-500">
-                                                <span className="font-bold block mb-1">Explanation:</span> {q.explanation}
+            <main className="max-w-5xl mx-auto px-6 py-12 space-y-20">
+
+                {/* Hero / Overview */}
+                <div className="grid md:grid-cols-3 gap-12">
+                    <div className="md:col-span-2 space-y-6">
+                        <h1 className="text-5xl font-bold leading-tight">
+                            Personalized <br /> Revision Strategy
+                        </h1>
+                        <p className="text-xl opacity-70 font-light leading-relaxed">
+                            We've analyzed your syllabus targets. Your revision should focus heavily on <span className="text-purple-600 dark:text-purple-400 font-medium">Vector Calculus nuances</span> and <span className="text-blue-600 dark:text-blue-400 font-medium">Optimization Constraints</span>.
+                        </p>
+
+                        <div className="flex gap-4 pt-4">
+                            <Button asChild className="rounded-full bg-black dark:bg-white text-white dark:text-black font-sans font-bold h-12 px-8">
+                                <a href="#flashcards">Start Active Recall</a>
+                            </Button>
+                            <Button asChild variant="outline" className="rounded-full font-sans font-bold h-12 px-8">
+                                <Link href="/tests/take">Take Mock Test</Link>
+                            </Button>
+                        </div>
+                    </div>
+
+                    {/* Pomodoro Timer Widget */}
+                    <div className="relative">
+                        <PomodoroTimer />
+                    </div>
+                </div>
+
+                <hr className="border-black/5 dark:border-white/5" />
+
+                {/* Priority Topics Analysis */}
+                <section className="space-y-8">
+                    <div className="flex items-center gap-4">
+                        <Target className="w-8 h-8 opacity-20" />
+                        <h2 className="text-3xl font-bold">Priority Gap Analysis</h2>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-8">
+                        {PRIORITY_TOPICS.map((unit, i) => (
+                            <div key={i} className="space-y-6">
+                                <h3 className="font-sans text-sm font-bold uppercase tracking-widest opacity-50 border-b border-black/10 dark:border-white/10 pb-2">
+                                    {unit.unit}
+                                </h3>
+                                <div className="space-y-4">
+                                    {unit.topics.map((topic, j) => (
+                                        <div key={j} className="bg-white/50 dark:bg-white/5 border border-black/5 dark:border-white/5 p-4 rounded-xl">
+                                            <div className="flex justify-between items-start mb-2">
+                                                <h4 className="font-bold text-lg">{topic.name}</h4>
+                                                <span className={`text-[10px] font-sans font-bold uppercase tracking-widest px-2 py-1 rounded-full border ${topic.gap === 'Critical' ? 'bg-red-500/10 text-red-500 border-red-500/20' :
+                                                        topic.gap === 'High' ? 'bg-orange-500/10 text-orange-500 border-orange-500/20' :
+                                                            'bg-yellow-500/10 text-yellow-500 border-yellow-500/20'
+                                                    }`}>
+                                                    {topic.gap} Gap
+                                                </span>
                                             </div>
-                                        )}
-                                    </div>
-                                ))}
-
-                                <div className="pt-8">
-                                    {!showQuizResults ? (
-                                        <Button onClick={() => setShowQuizResults(true)} className="w-full md:w-auto px-8 py-6 text-lg font-bold bg-green-600 hover:bg-green-700">
-                                            Check All Answers
-                                        </Button>
-                                    ) : (
-                                        <Button variant="outline" onClick={() => {
-                                            setShowQuizResults(false);
-                                            setSelectedAnswers({});
-                                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                                        }} className="w-full md:w-auto px-8 py-6 text-lg">
-                                            Reset Quiz
-                                        </Button>
-                                    )}
+                                            <p className="text-sm opacity-60 leading-relaxed font-sans">
+                                                <span className="font-bold">Analysis:</span> {topic.reason}
+                                            </p>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
-                        </div>
+                        ))}
+                    </div>
+                </section>
 
-                    </motion.div>
+                <hr className="border-black/5 dark:border-white/5" />
+
+                {/* Revision Strategy */}
+                <section className="space-y-8">
+                    <div className="flex items-center gap-4">
+                        <Brain className="w-8 h-8 opacity-20" />
+                        <h2 className="text-3xl font-bold">Recommended Protocol</h2>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-6">
+                        {REVISION_STRATEGY.map((strat, i) => (
+                            <div key={i} className="bg-purple-50/50 dark:bg-purple-900/10 p-6 rounded-2xl border border-purple-100 dark:border-purple-500/20">
+                                <h3 className="font-bold text-lg mb-3 text-purple-900 dark:text-purple-300">{strat.title}</h3>
+                                <p className="text-sm leading-relaxed opacity-80 font-sans">
+                                    {strat.desc}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                <hr className="border-black/5 dark:border-white/5" />
+
+                {/* Interactive Flashcards */}
+                <section id="flashcards" className="space-y-8">
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-4">
+                            <BookOpen className="w-8 h-8 opacity-20" />
+                            <h2 className="text-3xl font-bold">Concept Deck</h2>
+                        </div>
+                        <span className="font-sans text-xs font-bold uppercase tracking-widest opacity-40">
+                            {FLASHCARDS.length} Cards
+                        </span>
+                    </div>
+
+                    {/* Horizontal Scroll Deck */}
+                    <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory -mx-6 px-6 scrollbar-hide">
+                        {FLASHCARDS.map((card, i) => (
+                            <div key={i} className="snap-center shrink-0 w-[350px] md:w-[400px]">
+                                <FlashcardItem card={card} index={i} />
+                            </div>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Final CTA */}
+                <div className="bg-black dark:bg-white text-white dark:text-black rounded-3xl p-10 text-center space-y-6">
+                    <h2 className="text-3xl font-bold">Ready to Validate?</h2>
+                    <p className="opacity-70 font-light max-w-xl mx-auto text-lg">
+                        You've reviewed the concepts and gaps. Now, put your knowledge to the test under timed conditions.
+                    </p>
+                    <Button asChild size="lg" className="rounded-full px-10 h-14 text-lg font-bold font-sans bg-white text-black hover:bg-gray-100 dark:bg-black dark:text-white dark:hover:bg-gray-900 border border-transparent">
+                        <Link href="/tests/take">
+                            Start 10-Question Quiz <ArrowRight className="ml-2 w-5 h-5" />
+                        </Link>
+                    </Button>
                 </div>
-            </div>
+
+            </main>
         </div>
     );
 }
 
-function FlashcardItem({ card, index }: { card: Flashcard; index: number }) {
+function FlashcardItem({ card, index }: { card: { front: string, back: string }, index: number }) {
     const [flipped, setFlipped] = useState(false);
 
     return (
         <div
-            className="group perspective-1000 h-64 cursor-pointer"
+            className="group perspective-1000 h-80 cursor-pointer"
             onClick={() => setFlipped(!flipped)}
         >
             <motion.div
                 initial={false}
                 animate={{ rotateY: flipped ? 180 : 0 }}
-                transition={{ duration: 0.6, type: "spring" }}
+                transition={{ duration: 0.6, type: "spring", stiffness: 260, damping: 20 }}
                 className="w-full h-full relative preserve-3d"
                 style={{ transformStyle: "preserve-3d" }}
             >
                 {/* Front */}
-                <div className="absolute inset-0 backface-hidden bg-card border border-border p-8 rounded-2xl flex flex-col items-center justify-center text-center shadow-sm group-hover:shadow-md transition-shadow group-hover:border-purple-500/50">
-                    <span className="absolute top-4 left-4 text-xs font-bold text-purple-500 uppercase tracking-widest bg-purple-50 px-2 py-1 rounded">Card {index + 1}</span>
-                    <p className="font-semibold text-xl leading-relaxed">{card.front}</p>
-                    <span className="absolute bottom-4 text-xs text-muted-foreground opacity-50">Click to flip</span>
+                <div className="absolute inset-0 backface-hidden bg-white/50 dark:bg-white/5 border border-black/10 dark:border-white/10 p-8 rounded-3xl flex flex-col items-center justify-center text-center shadow-lg group-hover:border-purple-500/30 transition-colors">
+                    <span className="absolute top-6 left-6 text-xs font-bold opacity-30 font-sans tracking-widest uppercase">Card {index + 1}</span>
+                    <p className="font-medium text-xl leading-relaxed">{card.front}</p>
+                    <span className="absolute bottom-6 text-xs font-bold text-purple-500 font-sans uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">Click to Flip</span>
                 </div>
 
                 {/* Back */}
                 <div
-                    className="absolute inset-0 backface-hidden bg-gradient-to-br from-purple-600 to-indigo-700 text-white p-8 rounded-2xl flex items-center justify-center text-center shadow-lg"
+                    className="absolute inset-0 backface-hidden bg-[#0d0d2e] dark:bg-purple-950 border border-purple-500/30 p-8 rounded-3xl flex flex-col items-center justify-center text-center shadow-lg"
                     style={{ transform: "rotateY(180deg)" }}
                 >
-                    <p className="font-medium text-lg leading-relaxed">{card.back}</p>
+                    <p className="text-lg leading-relaxed text-purple-100">{card.back}</p>
                 </div>
             </motion.div>
         </div>
     );
+}
+
+function PomodoroTimer() {
+    const [timeLeft, setTimeLeft] = useState(25 * 60);
+    const [isActive, setIsActive] = useState(false);
+    const [isWork, setIsWork] = useState(true); // true = work, false = break
+
+    useEffect(() => {
+        let interval: NodeJS.Timeout | null = null;
+        if (isActive && timeLeft > 0) {
+            interval = setInterval(() => {
+                setTimeLeft((prev) => prev - 1);
+            }, 1000);
+        } else if (timeLeft === 0) {
+            setIsActive(false);
+            // Auto-switch mode
+            if (isWork) {
+                setTimeLeft(5 * 60); // 5 min break
+                setIsWork(false);
+            } else {
+                setTimeLeft(25 * 60); // 25 min work
+                setIsWork(true);
+            }
+        }
+        return () => { if (interval) clearInterval(interval); };
+    }, [isActive, timeLeft, isWork]);
+
+    const formatTime = (seconds: number) => {
+        const m = Math.floor(seconds / 60);
+        const s = seconds % 60;
+        return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+    };
+
+    const toggleTimer = () => setIsActive(!isActive);
+    const resetTimer = () => {
+        setIsActive(false);
+        setIsWork(true);
+        setTimeLeft(25 * 60);
+    };
+
+    return (
+        <div className="bg-black dark:bg-white text-white dark:text-black rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+            <div className="relative z-10 flex flex-col items-center justify-center space-y-6">
+                <div className="flex items-center gap-2 opacity-60">
+                    <Clock className="w-4 h-4" />
+                    <span className="text-xs font-bold uppercase tracking-widest font-sans">
+                        {isWork ? 'Focus Session' : 'Break Time'}
+                    </span>
+                </div>
+
+                <div className="text-7xl font-bold tabular-nums tracking-tight font-sans">
+                    {formatTime(timeLeft)}
+                </div>
+
+                <div className="flex gap-4">
+                    <Button
+                        onClick={toggleTimer}
+                        variant="outline"
+                        size="icon"
+                        className="rounded-full bg-white/10 border-white/20 text-white dark:text-black dark:bg-black/10 dark:border-black/20 hover:bg-white/20 w-12 h-12"
+                    >
+                        {isActive ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-1" />}
+                    </Button>
+                    <Button
+                        onClick={resetTimer}
+                        variant="outline"
+                        size="icon"
+                        className="rounded-full bg-white/10 border-white/20 text-white dark:text-black dark:bg-black/10 dark:border-black/20 hover:bg-white/20 w-12 h-12"
+                    >
+                        <RotateCcw className="w-4 h-4" />
+                    </Button>
+                </div>
+            </div>
+
+            {/* Progress Ring Background Effect (Simplified) */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-blue-500/20 opacity-50" />
+        </div>
+    )
 }
