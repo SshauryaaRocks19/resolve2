@@ -1,0 +1,1068 @@
+{
+       "exam": "neet",
+       "subject": "Chemistry",
+       "source": "NTA NEET Syllabus 2025-26 (based on NCERT Class 11+12 Chemistry)",
+       "note": "NEET Chemistry largely overlaps with JEE Main Chemistry. Chapter IDs mirror jee_main/chemistry.json where applicable.",
+       "total_chapters": 28,
+       "inherits_from": "jee_main/chemistry.json",
+       "scope_differences": {
+              "excluded_topics": [
+                     "Molecular Orbital Theory (advanced level)",
+                     "Ellingham Diagram (detailed)",
+                     "Band Theory of Solids (detailed)"
+              ],
+              "higher_weightage_in_neet": [
+                     "Biomolecules",
+                     "Chemistry in Everyday Life",
+                     "Polymers",
+                     "Environmental Chemistry",
+                     "s-Block Elements",
+                     "p-Block Elements"
+              ],
+              "lower_weightage_in_neet": [
+                     "Coordination Compounds (advanced)",
+                     "Solid State (advanced)",
+                     "Chemical Kinetics (numerical heavy)"
+              ]
+       },
+       "chapters": [
+              {
+                     "id": "neet_chem_001",
+                     "name": "Some Basic Concepts of Chemistry",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Mole Concept",
+                            "Stoichiometry"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_001_01",
+                                   "name": "Mole Concept",
+                                   "aliases": [
+                                          "mole",
+                                          "Avogadro's number",
+                                          "molar mass"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_001_02",
+                                   "name": "Stoichiometry",
+                                   "aliases": [
+                                          "limiting reagent",
+                                          "percentage composition"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_001_03",
+                                   "name": "Concentration Terms",
+                                   "aliases": [
+                                          "molarity",
+                                          "molality",
+                                          "mole fraction"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "easy",
+                     "jee_cross_ref": "jee_chem_001"
+              },
+              {
+                     "id": "neet_chem_002",
+                     "name": "Atomic Structure",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Structure of Atom",
+                            "Quantum Numbers",
+                            "Electronic Configuration"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_002_01",
+                                   "name": "Bohr's Model",
+                                   "aliases": [
+                                          "energy levels",
+                                          "hydrogen spectrum"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_002_02",
+                                   "name": "Quantum Numbers",
+                                   "aliases": [
+                                          "n",
+                                          "l",
+                                          "m",
+                                          "s",
+                                          "Aufbau",
+                                          "Hund's rule",
+                                          "Pauli"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_002_03",
+                                   "name": "Shapes of Orbitals",
+                                   "aliases": [
+                                          "s orbital",
+                                          "p orbital",
+                                          "d orbital"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium",
+                     "jee_cross_ref": "jee_chem_002"
+              },
+              {
+                     "id": "neet_chem_003",
+                     "name": "Chemical Bonding",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Chemical Bonding and Molecular Structure",
+                            "VSEPR",
+                            "Hybridization"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_003_01",
+                                   "name": "Ionic and Covalent Bond",
+                                   "aliases": [
+                                          "electrovalent bond",
+                                          "Lewis structure",
+                                          "sigma bond",
+                                          "pi bond"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_003_02",
+                                   "name": "VSEPR and Hybridization",
+                                   "aliases": [
+                                          "molecular geometry",
+                                          "sp3",
+                                          "sp2",
+                                          "sp"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_003_03",
+                                   "name": "Hydrogen Bonding",
+                                   "aliases": [
+                                          "intermolecular forces",
+                                          "van der Waals"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium",
+                     "jee_cross_ref": "jee_chem_003"
+              },
+              {
+                     "id": "neet_chem_004",
+                     "name": "Thermodynamics",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Chemical Thermodynamics",
+                            "Enthalpy",
+                            "Entropy",
+                            "Gibbs Free Energy"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_004_01",
+                                   "name": "First Law and Enthalpy",
+                                   "aliases": [
+                                          "internal energy",
+                                          "ΔH",
+                                          "Hess's law"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_004_02",
+                                   "name": "Entropy and Free Energy",
+                                   "aliases": [
+                                          "ΔS",
+                                          "ΔG",
+                                          "spontaneity"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_chem_005"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium",
+                     "jee_cross_ref": "jee_chem_004"
+              },
+              {
+                     "id": "neet_chem_005",
+                     "name": "Equilibrium",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Chemical Equilibrium",
+                            "Ionic Equilibrium",
+                            "pH",
+                            "Buffers"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_005_01",
+                                   "name": "Chemical Equilibrium",
+                                   "aliases": [
+                                          "Kc",
+                                          "Kp",
+                                          "Le Chatelier's principle"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_005_02",
+                                   "name": "Ionic Equilibrium",
+                                   "aliases": [
+                                          "pH",
+                                          "buffer",
+                                          "solubility product",
+                                          "common ion effect"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_chem_004"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "hard",
+                     "jee_cross_ref": "jee_chem_005"
+              },
+              {
+                     "id": "neet_chem_006",
+                     "name": "Redox Reactions and Electrochemistry",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Electrochemistry",
+                            "Galvanic Cell",
+                            "Electrolysis",
+                            "Nernst Equation"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_006_01",
+                                   "name": "Redox Reactions",
+                                   "aliases": [
+                                          "oxidation number",
+                                          "balancing redox"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_006_02",
+                                   "name": "Electrochemical Cells",
+                                   "aliases": [
+                                          "galvanic cell",
+                                          "electrode potential",
+                                          "Nernst equation"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_006_03",
+                                   "name": "Electrolysis and Conductance",
+                                   "aliases": [
+                                          "Faraday's laws",
+                                          "molar conductivity",
+                                          "Kohlrausch's law"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium",
+                     "jee_cross_ref": "jee_chem_006"
+              },
+              {
+                     "id": "neet_chem_007",
+                     "name": "Chemical Kinetics",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Rate of Reaction",
+                            "Order of Reaction",
+                            "Arrhenius Equation"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_007_01",
+                                   "name": "Rate and Order",
+                                   "aliases": [
+                                          "rate law",
+                                          "zero order",
+                                          "first order",
+                                          "half-life"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_007_02",
+                                   "name": "Arrhenius Equation",
+                                   "aliases": [
+                                          "activation energy",
+                                          "temperature dependence"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium",
+                     "jee_cross_ref": "jee_chem_007"
+              },
+              {
+                     "id": "neet_chem_008",
+                     "name": "Solutions",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Colligative Properties",
+                            "Raoult's Law",
+                            "Osmotic Pressure"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_008_01",
+                                   "name": "Concentration and Raoult's Law",
+                                   "aliases": [
+                                          "molarity",
+                                          "Raoult's law",
+                                          "ideal solution"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_008_02",
+                                   "name": "Colligative Properties",
+                                   "aliases": [
+                                          "boiling point elevation",
+                                          "freezing point depression",
+                                          "osmotic pressure",
+                                          "van't Hoff factor"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium",
+                     "jee_cross_ref": "jee_chem_008"
+              },
+              {
+                     "id": "neet_chem_009",
+                     "name": "Solid State",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Crystal Structure",
+                            "Unit Cell",
+                            "Defects"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_009_01",
+                                   "name": "Unit Cell and Packing",
+                                   "aliases": [
+                                          "BCC",
+                                          "FCC",
+                                          "packing efficiency",
+                                          "voids"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_009_02",
+                                   "name": "Defects",
+                                   "aliases": [
+                                          "Schottky defect",
+                                          "Frenkel defect"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            4
+                     ],
+                     "difficulty_tier": "easy",
+                     "jee_cross_ref": "jee_chem_009"
+              },
+              {
+                     "id": "neet_chem_010",
+                     "name": "Surface Chemistry",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Adsorption",
+                            "Colloids",
+                            "Catalysis"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_010_01",
+                                   "name": "Adsorption",
+                                   "aliases": [
+                                          "physisorption",
+                                          "chemisorption"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_010_02",
+                                   "name": "Colloids",
+                                   "aliases": [
+                                          "Tyndall effect",
+                                          "coagulation",
+                                          "emulsion"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            4
+                     ],
+                     "difficulty_tier": "easy",
+                     "jee_cross_ref": "jee_chem_010"
+              },
+              {
+                     "id": "neet_chem_011",
+                     "name": "Classification of Elements and Periodicity",
+                     "parent_unit": "Inorganic Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Periodic Table",
+                            "Periodic Trends"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_011_01",
+                                   "name": "Modern Periodic Table",
+                                   "aliases": [
+                                          "periods",
+                                          "groups",
+                                          "blocks"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_011_02",
+                                   "name": "Periodic Trends",
+                                   "aliases": [
+                                          "atomic radius",
+                                          "ionization energy",
+                                          "electron affinity",
+                                          "electronegativity"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "easy",
+                     "jee_cross_ref": "jee_chem_011"
+              },
+              {
+                     "id": "neet_chem_012",
+                     "name": "s-Block Elements",
+                     "parent_unit": "Inorganic Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Alkali Metals",
+                            "Alkaline Earth Metals"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_012_01",
+                                   "name": "Group 1 and Group 2",
+                                   "aliases": [
+                                          "alkali metals",
+                                          "alkaline earth metals",
+                                          "Na compounds",
+                                          "Ca compounds"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "easy",
+                     "jee_cross_ref": "jee_chem_012"
+              },
+              {
+                     "id": "neet_chem_013",
+                     "name": "p-Block Elements",
+                     "parent_unit": "Inorganic Chemistry",
+                     "class": [
+                            11,
+                            12
+                     ],
+                     "aliases": [
+                            "Group 13-18",
+                            "Boron Family",
+                            "Carbon Family",
+                            "Nitrogen Family",
+                            "Oxygen Family",
+                            "Halogens",
+                            "Noble Gases"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_013_01",
+                                   "name": "Group 13-14",
+                                   "aliases": [
+                                          "boron family",
+                                          "carbon family"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_013_02",
+                                   "name": "Group 15-16",
+                                   "aliases": [
+                                          "nitrogen family",
+                                          "oxygen family"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_013_03",
+                                   "name": "Group 17-18",
+                                   "aliases": [
+                                          "halogens",
+                                          "noble gases"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            8,
+                            16
+                     ],
+                     "difficulty_tier": "medium",
+                     "jee_cross_ref": "jee_chem_013"
+              },
+              {
+                     "id": "neet_chem_014",
+                     "name": "d and f-Block Elements",
+                     "parent_unit": "Inorganic Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Transition Elements",
+                            "Lanthanides",
+                            "Actinides"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_014_01",
+                                   "name": "General Properties",
+                                   "aliases": [
+                                          "variable oxidation states",
+                                          "coloured ions",
+                                          "magnetic properties"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_014_02",
+                                   "name": "Important Compounds",
+                                   "aliases": [
+                                          "KMnO₄",
+                                          "K₂Cr₂O₇"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_chem_015"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium",
+                     "jee_cross_ref": "jee_chem_014"
+              },
+              {
+                     "id": "neet_chem_015",
+                     "name": "Coordination Compounds",
+                     "parent_unit": "Inorganic Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Complex Compounds",
+                            "Crystal Field Theory",
+                            "Ligands"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_015_01",
+                                   "name": "Nomenclature and Isomerism",
+                                   "aliases": [
+                                          "IUPAC naming",
+                                          "geometrical isomerism",
+                                          "optical isomerism"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_015_02",
+                                   "name": "Bonding Theories",
+                                   "aliases": [
+                                          "VBT",
+                                          "CFT",
+                                          "spectrochemical series"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_chem_014"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "hard",
+                     "jee_cross_ref": "jee_chem_015"
+              },
+              {
+                     "id": "neet_chem_016",
+                     "name": "General Organic Chemistry",
+                     "parent_unit": "Organic Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "GOC",
+                            "IUPAC Nomenclature",
+                            "Isomerism",
+                            "Electronic Effects",
+                            "Reaction Mechanisms"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_016_01",
+                                   "name": "IUPAC Nomenclature and Isomerism",
+                                   "aliases": [
+                                          "naming",
+                                          "structural isomerism",
+                                          "stereoisomerism",
+                                          "chirality"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_016_02",
+                                   "name": "Electronic Effects",
+                                   "aliases": [
+                                          "inductive effect",
+                                          "resonance",
+                                          "hyperconjugation"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_016_03",
+                                   "name": "Reaction Intermediates",
+                                   "aliases": [
+                                          "carbocation",
+                                          "carbanion",
+                                          "free radical"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "hard",
+                     "jee_cross_ref": "jee_chem_017"
+              },
+              {
+                     "id": "neet_chem_017",
+                     "name": "Hydrocarbons",
+                     "parent_unit": "Organic Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Alkanes",
+                            "Alkenes",
+                            "Alkynes",
+                            "Aromatic Hydrocarbons"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_017_01",
+                                   "name": "Aliphatic Hydrocarbons",
+                                   "aliases": [
+                                          "alkanes",
+                                          "alkenes",
+                                          "alkynes",
+                                          "addition reactions"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_017_02",
+                                   "name": "Aromatic Hydrocarbons",
+                                   "aliases": [
+                                          "benzene",
+                                          "EAS",
+                                          "Friedel-Crafts"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_chem_016"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium",
+                     "jee_cross_ref": "jee_chem_018"
+              },
+              {
+                     "id": "neet_chem_018",
+                     "name": "Organic Compounds with Functional Groups",
+                     "parent_unit": "Organic Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Haloalkanes",
+                            "Alcohols",
+                            "Phenols",
+                            "Ethers",
+                            "Aldehydes",
+                            "Ketones",
+                            "Carboxylic Acids",
+                            "Amines"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_018_01",
+                                   "name": "Haloalkanes and Haloarenes",
+                                   "aliases": [
+                                          "SN1",
+                                          "SN2",
+                                          "E1",
+                                          "E2"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_018_02",
+                                   "name": "Alcohols, Phenols and Ethers",
+                                   "aliases": [
+                                          "alcohol reactions",
+                                          "phenol acidity"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_018_03",
+                                   "name": "Aldehydes and Ketones",
+                                   "aliases": [
+                                          "nucleophilic addition",
+                                          "aldol",
+                                          "Cannizzaro"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_018_04",
+                                   "name": "Carboxylic Acids",
+                                   "aliases": [
+                                          "acidity",
+                                          "esterification"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_018_05",
+                                   "name": "Amines",
+                                   "aliases": [
+                                          "basicity",
+                                          "diazonium salts",
+                                          "Gabriel synthesis"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_chem_016",
+                            "neet_chem_017"
+                     ],
+                     "typical_marks_range": [
+                            8,
+                            16
+                     ],
+                     "difficulty_tier": "hard",
+                     "jee_cross_ref": "jee_chem_019"
+              },
+              {
+                     "id": "neet_chem_019",
+                     "name": "Biomolecules",
+                     "parent_unit": "Organic Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Carbohydrates",
+                            "Proteins",
+                            "Nucleic Acids",
+                            "Vitamins",
+                            "Enzymes"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_019_01",
+                                   "name": "Carbohydrates",
+                                   "aliases": [
+                                          "glucose",
+                                          "sucrose",
+                                          "starch",
+                                          "cellulose"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_019_02",
+                                   "name": "Proteins",
+                                   "aliases": [
+                                          "amino acids",
+                                          "peptide bond",
+                                          "enzymes"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_019_03",
+                                   "name": "Nucleic Acids",
+                                   "aliases": [
+                                          "DNA",
+                                          "RNA"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_019_04",
+                                   "name": "Vitamins",
+                                   "aliases": [
+                                          "water-soluble",
+                                          "fat-soluble"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "easy",
+                     "jee_cross_ref": "jee_chem_024"
+              },
+              {
+                     "id": "neet_chem_020",
+                     "name": "Polymers",
+                     "parent_unit": "Organic Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Polymerization",
+                            "Addition Polymers",
+                            "Condensation Polymers"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_020_01",
+                                   "name": "Types and Important Polymers",
+                                   "aliases": [
+                                          "polyethylene",
+                                          "nylon",
+                                          "Bakelite",
+                                          "rubber",
+                                          "biodegradable polymers"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            4
+                     ],
+                     "difficulty_tier": "easy",
+                     "jee_cross_ref": "jee_chem_023"
+              },
+              {
+                     "id": "neet_chem_021",
+                     "name": "Chemistry in Everyday Life",
+                     "parent_unit": "Organic Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Drugs",
+                            "Medicines",
+                            "Soaps",
+                            "Detergents"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_021_01",
+                                   "name": "Drugs and Medicines",
+                                   "aliases": [
+                                          "analgesics",
+                                          "antibiotics",
+                                          "antacids"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_021_02",
+                                   "name": "Cleansing Agents",
+                                   "aliases": [
+                                          "soaps",
+                                          "detergents",
+                                          "micelle"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "easy",
+                     "jee_cross_ref": "jee_chem_025"
+              },
+              {
+                     "id": "neet_chem_022",
+                     "name": "States of Matter",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Gaseous State",
+                            "Gas Laws",
+                            "van der Waals"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_022_01",
+                                   "name": "Gas Laws",
+                                   "aliases": [
+                                          "Boyle's law",
+                                          "Charles' law",
+                                          "ideal gas equation"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_chem_022_02",
+                                   "name": "Real Gases",
+                                   "aliases": [
+                                          "van der Waals equation",
+                                          "compressibility factor"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            4
+                     ],
+                     "difficulty_tier": "easy",
+                     "jee_cross_ref": "jee_chem_026"
+              },
+              {
+                     "id": "neet_chem_023",
+                     "name": "Hydrogen",
+                     "parent_unit": "Inorganic Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Hydrogen Chemistry",
+                            "Water",
+                            "Hydrogen Peroxide"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_023_01",
+                                   "name": "Hydrogen and its Compounds",
+                                   "aliases": [
+                                          "isotopes",
+                                          "H₂O₂",
+                                          "hard water"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            4
+                     ],
+                     "difficulty_tier": "easy",
+                     "jee_cross_ref": "jee_chem_027"
+              },
+              {
+                     "id": "neet_chem_024",
+                     "name": "Environmental Chemistry",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Pollution",
+                            "Ozone Depletion",
+                            "Green Chemistry"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_024_01",
+                                   "name": "Environmental Pollution",
+                                   "aliases": [
+                                          "air pollution",
+                                          "water pollution",
+                                          "ozone depletion",
+                                          "greenhouse effect"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            4
+                     ],
+                     "difficulty_tier": "easy",
+                     "jee_cross_ref": "jee_chem_028"
+              },
+              {
+                     "id": "neet_chem_025",
+                     "name": "Metallurgy",
+                     "parent_unit": "Inorganic Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Extraction of Metals",
+                            "Isolation of Elements"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_chem_025_01",
+                                   "name": "Metallurgical Processes",
+                                   "aliases": [
+                                          "concentration",
+                                          "roasting",
+                                          "smelting",
+                                          "refining"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            4
+                     ],
+                     "difficulty_tier": "easy",
+                     "jee_cross_ref": "jee_chem_016"
+              }
+       ]
+}

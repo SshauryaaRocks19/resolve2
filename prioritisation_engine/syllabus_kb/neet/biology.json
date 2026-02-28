@@ -1,0 +1,1992 @@
+{
+       "exam": "neet",
+       "subject": "Biology",
+       "source": "NTA NEET Syllabus 2025-26 (based on NCERT Class 11+12 Biology)",
+       "total_chapters": 28,
+       "chapters": [
+              {
+                     "id": "neet_bio_001",
+                     "name": "The Living World",
+                     "parent_unit": "Diversity in Living World",
+                     "class": 11,
+                     "aliases": [
+                            "Diversity in Living World",
+                            "Taxonomy",
+                            "Classification"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_001_01",
+                                   "name": "Biodiversity",
+                                   "aliases": [
+                                          "biological diversity",
+                                          "species diversity",
+                                          "genetic diversity"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_001_02",
+                                   "name": "Taxonomic Categories",
+                                   "aliases": [
+                                          "taxonomy",
+                                          "taxonomic hierarchy",
+                                          "kingdom",
+                                          "phylum",
+                                          "class",
+                                          "order",
+                                          "family",
+                                          "genus",
+                                          "species"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_001_03",
+                                   "name": "Taxonomic Aids",
+                                   "aliases": [
+                                          "herbarium",
+                                          "botanical garden",
+                                          "museum",
+                                          "zoological park",
+                                          "taxonomic key"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_002"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "easy"
+              },
+              {
+                     "id": "neet_bio_002",
+                     "name": "Biological Classification",
+                     "parent_unit": "Diversity in Living World",
+                     "class": 11,
+                     "aliases": [
+                            "Five Kingdom Classification",
+                            "Whittaker Classification"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_002_01",
+                                   "name": "Kingdom Monera",
+                                   "aliases": [
+                                          "bacteria",
+                                          "cyanobacteria",
+                                          "archaebacteria",
+                                          "eubacteria",
+                                          "mycoplasma"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_002_02",
+                                   "name": "Kingdom Protista",
+                                   "aliases": [
+                                          "protists",
+                                          "chrysophytes",
+                                          "dinoflagellates",
+                                          "euglenoids",
+                                          "slime moulds",
+                                          "protozoans"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_002_03",
+                                   "name": "Kingdom Fungi",
+                                   "aliases": [
+                                          "fungi",
+                                          "mushroom",
+                                          "yeast",
+                                          "mould",
+                                          "phycomycetes",
+                                          "ascomycetes",
+                                          "basidiomycetes",
+                                          "deuteromycetes"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_002_04",
+                                   "name": "Kingdom Plantae",
+                                   "aliases": [
+                                          "plant kingdom"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_002_05",
+                                   "name": "Kingdom Animalia",
+                                   "aliases": [
+                                          "animal kingdom"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_002_06",
+                                   "name": "Viruses, Viroids and Prions",
+                                   "aliases": [
+                                          "virus",
+                                          "viroid",
+                                          "prion",
+                                          "bacteriophage",
+                                          "TMV"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_001",
+                            "neet_bio_003",
+                            "neet_bio_004"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "neet_bio_003",
+                     "name": "Plant Kingdom",
+                     "parent_unit": "Diversity in Living World",
+                     "class": 11,
+                     "aliases": [
+                            "Plantae",
+                            "Plant Diversity",
+                            "Plant Classification"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_003_01",
+                                   "name": "Algae",
+                                   "aliases": [
+                                          "chlorophyceae",
+                                          "phaeophyceae",
+                                          "rhodophyceae",
+                                          "green algae",
+                                          "brown algae",
+                                          "red algae"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_003_02",
+                                   "name": "Bryophytes",
+                                   "aliases": [
+                                          "liverworts",
+                                          "mosses",
+                                          "hornworts",
+                                          "amphibians of plant kingdom"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_003_03",
+                                   "name": "Pteridophytes",
+                                   "aliases": [
+                                          "ferns",
+                                          "horsetails",
+                                          "club mosses",
+                                          "vascular cryptogams"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_003_04",
+                                   "name": "Gymnosperms",
+                                   "aliases": [
+                                          "conifers",
+                                          "cycads",
+                                          "pines",
+                                          "naked seeds"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_003_05",
+                                   "name": "Angiosperms",
+                                   "aliases": [
+                                          "flowering plants",
+                                          "monocots",
+                                          "dicots",
+                                          "monocotyledon",
+                                          "dicotyledon"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_003_06",
+                                   "name": "Plant Life Cycles",
+                                   "aliases": [
+                                          "alternation of generations",
+                                          "haplontic",
+                                          "diplontic",
+                                          "haplo-diplontic"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_002"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "neet_bio_004",
+                     "name": "Animal Kingdom",
+                     "parent_unit": "Diversity in Living World",
+                     "class": 11,
+                     "aliases": [
+                            "Animalia",
+                            "Animal Diversity",
+                            "Animal Classification"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_004_01",
+                                   "name": "Basis of Classification",
+                                   "aliases": [
+                                          "levels of organization",
+                                          "symmetry",
+                                          "coelom",
+                                          "segmentation",
+                                          "notochord"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_004_02",
+                                   "name": "Non-Chordates",
+                                   "aliases": [
+                                          "Porifera",
+                                          "Cnidaria",
+                                          "Ctenophora",
+                                          "Platyhelminthes",
+                                          "Aschelminthes",
+                                          "Annelida",
+                                          "Arthropoda",
+                                          "Mollusca",
+                                          "Echinodermata"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_004_03",
+                                   "name": "Chordates",
+                                   "aliases": [
+                                          "Chordata",
+                                          "Protochordata",
+                                          "Vertebrata",
+                                          "Pisces",
+                                          "Amphibia",
+                                          "Reptilia",
+                                          "Aves",
+                                          "Mammalia"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_002"
+                     ],
+                     "typical_marks_range": [
+                            8,
+                            16
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "neet_bio_005",
+                     "name": "Morphology of Flowering Plants",
+                     "parent_unit": "Structural Organisation",
+                     "class": 11,
+                     "aliases": [
+                            "Plant Morphology",
+                            "Root",
+                            "Stem",
+                            "Leaf",
+                            "Flower"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_005_01",
+                                   "name": "Root",
+                                   "aliases": [
+                                          "tap root",
+                                          "fibrous root",
+                                          "root modifications",
+                                          "adventitious root"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_005_02",
+                                   "name": "Stem",
+                                   "aliases": [
+                                          "stem modifications",
+                                          "runner",
+                                          "stolon",
+                                          "tuber",
+                                          "bulb",
+                                          "corm"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_005_03",
+                                   "name": "Leaf",
+                                   "aliases": [
+                                          "leaf modifications",
+                                          "phyllotaxy",
+                                          "venation",
+                                          "simple leaf",
+                                          "compound leaf"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_005_04",
+                                   "name": "Flower",
+                                   "aliases": [
+                                          "inflorescence",
+                                          "calyx",
+                                          "corolla",
+                                          "androecium",
+                                          "gynoecium",
+                                          "placentation"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_005_05",
+                                   "name": "Fruit and Seed",
+                                   "aliases": [
+                                          "fruit types",
+                                          "seed structure",
+                                          "endosperm",
+                                          "cotyledon"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_005_06",
+                                   "name": "Plant Families",
+                                   "aliases": [
+                                          "Fabaceae",
+                                          "Solanaceae",
+                                          "Liliaceae",
+                                          "floral formula",
+                                          "floral diagram"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_003"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "neet_bio_006",
+                     "name": "Anatomy of Flowering Plants",
+                     "parent_unit": "Structural Organisation",
+                     "class": 11,
+                     "aliases": [
+                            "Plant Anatomy",
+                            "Tissue System",
+                            "Internal Structure"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_006_01",
+                                   "name": "Plant Tissues",
+                                   "aliases": [
+                                          "meristematic tissue",
+                                          "permanent tissue",
+                                          "parenchyma",
+                                          "collenchyma",
+                                          "sclerenchyma",
+                                          "xylem",
+                                          "phloem"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_006_02",
+                                   "name": "Tissue Systems",
+                                   "aliases": [
+                                          "epidermal tissue",
+                                          "ground tissue",
+                                          "vascular tissue",
+                                          "vascular bundle"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_006_03",
+                                   "name": "Anatomy of Root, Stem and Leaf",
+                                   "aliases": [
+                                          "dicot root",
+                                          "monocot root",
+                                          "dicot stem",
+                                          "monocot stem",
+                                          "dorsiventral leaf",
+                                          "isobilateral leaf"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_006_04",
+                                   "name": "Secondary Growth",
+                                   "aliases": [
+                                          "vascular cambium",
+                                          "cork cambium",
+                                          "annual rings",
+                                          "heartwood",
+                                          "sapwood"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_005"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "neet_bio_007",
+                     "name": "Structural Organisation in Animals",
+                     "parent_unit": "Structural Organisation",
+                     "class": 11,
+                     "aliases": [
+                            "Animal Tissues",
+                            "Animal Morphology"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_007_01",
+                                   "name": "Animal Tissues",
+                                   "aliases": [
+                                          "epithelial tissue",
+                                          "connective tissue",
+                                          "muscular tissue",
+                                          "nervous tissue"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_007_02",
+                                   "name": "Organ and Organ Systems",
+                                   "aliases": [
+                                          "morphology of earthworm",
+                                          "morphology of cockroach",
+                                          "morphology of frog"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_004"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "easy"
+              },
+              {
+                     "id": "neet_bio_008",
+                     "name": "Cell — The Unit of Life",
+                     "parent_unit": "Cell Biology",
+                     "class": 11,
+                     "aliases": [
+                            "Cell Biology",
+                            "Cell Structure",
+                            "Cell Organelles"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_008_01",
+                                   "name": "Cell Theory",
+                                   "aliases": [
+                                          "Schleiden and Schwann",
+                                          "cell theory",
+                                          "prokaryotic cell",
+                                          "eukaryotic cell"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_008_02",
+                                   "name": "Cell Membrane",
+                                   "aliases": [
+                                          "plasma membrane",
+                                          "fluid mosaic model",
+                                          "cell wall",
+                                          "transport across membrane"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_008_03",
+                                   "name": "Cell Organelles",
+                                   "aliases": [
+                                          "nucleus",
+                                          "mitochondria",
+                                          "chloroplast",
+                                          "endoplasmic reticulum",
+                                          "Golgi apparatus",
+                                          "lysosome",
+                                          "ribosome",
+                                          "centrosome",
+                                          "vacuole",
+                                          "peroxisome"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_008_04",
+                                   "name": "Cytoskeleton",
+                                   "aliases": [
+                                          "microtubules",
+                                          "microfilaments",
+                                          "intermediate filaments",
+                                          "cilia",
+                                          "flagella"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_009",
+                            "neet_bio_010"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "neet_bio_009",
+                     "name": "Biomolecules",
+                     "parent_unit": "Cell Biology",
+                     "class": 11,
+                     "aliases": [
+                            "Biochemistry",
+                            "Biological Molecules"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_009_01",
+                                   "name": "Carbohydrates",
+                                   "aliases": [
+                                          "monosaccharides",
+                                          "disaccharides",
+                                          "polysaccharides",
+                                          "glucose",
+                                          "starch",
+                                          "glycogen",
+                                          "cellulose"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_009_02",
+                                   "name": "Proteins",
+                                   "aliases": [
+                                          "amino acids",
+                                          "peptide bond",
+                                          "primary structure",
+                                          "secondary structure",
+                                          "tertiary structure",
+                                          "quaternary structure"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_009_03",
+                                   "name": "Lipids",
+                                   "aliases": [
+                                          "fats",
+                                          "oils",
+                                          "phospholipids",
+                                          "cholesterol",
+                                          "fatty acids"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_009_04",
+                                   "name": "Nucleic Acids",
+                                   "aliases": [
+                                          "DNA",
+                                          "RNA",
+                                          "nucleotide",
+                                          "nucleoside"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_009_05",
+                                   "name": "Enzymes",
+                                   "aliases": [
+                                          "enzyme classification",
+                                          "enzyme action",
+                                          "factors affecting enzyme activity",
+                                          "competitive inhibition",
+                                          "allosteric inhibition",
+                                          "cofactors",
+                                          "coenzymes"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_008"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "neet_bio_010",
+                     "name": "Cell Cycle and Cell Division",
+                     "parent_unit": "Cell Biology",
+                     "class": 11,
+                     "aliases": [
+                            "Cell Division",
+                            "Mitosis",
+                            "Meiosis"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_010_01",
+                                   "name": "Cell Cycle",
+                                   "aliases": [
+                                          "interphase",
+                                          "G1 phase",
+                                          "S phase",
+                                          "G2 phase",
+                                          "M phase"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_010_02",
+                                   "name": "Mitosis",
+                                   "aliases": [
+                                          "prophase",
+                                          "metaphase",
+                                          "anaphase",
+                                          "telophase",
+                                          "cytokinesis",
+                                          "equational division"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_010_03",
+                                   "name": "Meiosis",
+                                   "aliases": [
+                                          "meiosis I",
+                                          "meiosis II",
+                                          "reductional division",
+                                          "crossing over",
+                                          "synapsis",
+                                          "chiasmata",
+                                          "bivalent"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_008",
+                            "neet_bio_019"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "neet_bio_011",
+                     "name": "Transport in Plants",
+                     "parent_unit": "Plant Physiology",
+                     "class": 11,
+                     "aliases": [
+                            "Water Transport",
+                            "Mineral Transport",
+                            "Translocation"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_011_01",
+                                   "name": "Means of Transport",
+                                   "aliases": [
+                                          "diffusion",
+                                          "facilitated diffusion",
+                                          "active transport",
+                                          "osmosis"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_011_02",
+                                   "name": "Water Absorption and Movement",
+                                   "aliases": [
+                                          "water potential",
+                                          "osmotic pressure",
+                                          "turgor pressure",
+                                          "plasmolysis",
+                                          "imbibition"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_011_03",
+                                   "name": "Transpiration",
+                                   "aliases": [
+                                          "stomatal transpiration",
+                                          "cuticular transpiration",
+                                          "lenticular transpiration",
+                                          "transpiration pull"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_011_04",
+                                   "name": "Translocation of Food",
+                                   "aliases": [
+                                          "phloem transport",
+                                          "mass flow hypothesis",
+                                          "pressure flow hypothesis"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_012"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "neet_bio_012",
+                     "name": "Mineral Nutrition",
+                     "parent_unit": "Plant Physiology",
+                     "class": 11,
+                     "aliases": [
+                            "Plant Nutrition",
+                            "Essential Elements",
+                            "Nitrogen Fixation"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_012_01",
+                                   "name": "Essential Mineral Elements",
+                                   "aliases": [
+                                          "macronutrients",
+                                          "micronutrients",
+                                          "criteria for essentiality"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_012_02",
+                                   "name": "Deficiency Symptoms",
+                                   "aliases": [
+                                          "chlorosis",
+                                          "necrosis",
+                                          "mineral deficiency"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_012_03",
+                                   "name": "Nitrogen Metabolism",
+                                   "aliases": [
+                                          "nitrogen cycle",
+                                          "nitrogen fixation",
+                                          "biological nitrogen fixation",
+                                          "Rhizobium",
+                                          "nitrogenase"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_011"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "easy"
+              },
+              {
+                     "id": "neet_bio_013",
+                     "name": "Photosynthesis in Higher Plants",
+                     "parent_unit": "Plant Physiology",
+                     "class": 11,
+                     "aliases": [
+                            "Photosynthesis",
+                            "Light Reaction",
+                            "Dark Reaction",
+                            "Calvin Cycle"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_013_01",
+                                   "name": "Light Reaction",
+                                   "aliases": [
+                                          "photosystem I",
+                                          "photosystem II",
+                                          "Z-scheme",
+                                          "photophosphorylation",
+                                          "electron transport chain",
+                                          "cyclic photophosphorylation",
+                                          "non-cyclic photophosphorylation"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_013_02",
+                                   "name": "Calvin Cycle",
+                                   "aliases": [
+                                          "C3 cycle",
+                                          "dark reaction",
+                                          "carbon fixation",
+                                          "RuBisCO",
+                                          "carboxylation",
+                                          "reduction",
+                                          "regeneration"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_013_03",
+                                   "name": "C4 Pathway and CAM",
+                                   "aliases": [
+                                          "C4 plants",
+                                          "Hatch-Slack pathway",
+                                          "Kranz anatomy",
+                                          "CAM plants",
+                                          "PEP carboxylase"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_013_04",
+                                   "name": "Photorespiration",
+                                   "aliases": [
+                                          "C2 cycle",
+                                          "photorespiration"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "hard"
+              },
+              {
+                     "id": "neet_bio_014",
+                     "name": "Respiration in Plants",
+                     "parent_unit": "Plant Physiology",
+                     "class": 11,
+                     "aliases": [
+                            "Plant Respiration",
+                            "Cellular Respiration",
+                            "Glycolysis",
+                            "Krebs Cycle"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_014_01",
+                                   "name": "Glycolysis",
+                                   "aliases": [
+                                          "EMP pathway",
+                                          "glucose breakdown",
+                                          "pyruvate"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_014_02",
+                                   "name": "Fermentation",
+                                   "aliases": [
+                                          "anaerobic respiration",
+                                          "alcohol fermentation",
+                                          "lactic acid fermentation"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_014_03",
+                                   "name": "Krebs Cycle",
+                                   "aliases": [
+                                          "TCA cycle",
+                                          "citric acid cycle",
+                                          "aerobic respiration"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_014_04",
+                                   "name": "Electron Transport Chain",
+                                   "aliases": [
+                                          "ETC",
+                                          "oxidative phosphorylation",
+                                          "ATP synthesis",
+                                          "chemiosmosis"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_014_05",
+                                   "name": "Respiratory Quotient",
+                                   "aliases": [
+                                          "RQ",
+                                          "respiratory quotient"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_013"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "hard"
+              },
+              {
+                     "id": "neet_bio_015",
+                     "name": "Plant Growth and Development",
+                     "parent_unit": "Plant Physiology",
+                     "class": 11,
+                     "aliases": [
+                            "Plant Hormones",
+                            "Phytohormones",
+                            "Plant Growth Regulators"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_015_01",
+                                   "name": "Growth",
+                                   "aliases": [
+                                          "phases of growth",
+                                          "arithmetic growth",
+                                          "geometric growth",
+                                          "growth rate",
+                                          "conditions for growth"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_015_02",
+                                   "name": "Plant Growth Regulators",
+                                   "aliases": [
+                                          "auxin",
+                                          "gibberellin",
+                                          "cytokinin",
+                                          "ethylene",
+                                          "abscisic acid",
+                                          "ABA"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_015_03",
+                                   "name": "Photoperiodism",
+                                   "aliases": [
+                                          "long day plants",
+                                          "short day plants",
+                                          "day-neutral plants",
+                                          "phytochrome"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_015_04",
+                                   "name": "Vernalisation",
+                                   "aliases": [
+                                          "vernalization",
+                                          "cold treatment",
+                                          "flowering"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "neet_bio_016",
+                     "name": "Digestion and Absorption",
+                     "parent_unit": "Human Physiology",
+                     "class": 11,
+                     "aliases": [
+                            "Digestive System",
+                            "Human Digestive System",
+                            "Alimentary Canal"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_016_01",
+                                   "name": "Alimentary Canal",
+                                   "aliases": [
+                                          "mouth",
+                                          "pharynx",
+                                          "oesophagus",
+                                          "stomach",
+                                          "small intestine",
+                                          "large intestine"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_016_02",
+                                   "name": "Digestive Glands",
+                                   "aliases": [
+                                          "salivary glands",
+                                          "liver",
+                                          "pancreas",
+                                          "bile",
+                                          "gastric glands",
+                                          "intestinal glands"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_016_03",
+                                   "name": "Digestion of Food",
+                                   "aliases": [
+                                          "protein digestion",
+                                          "carbohydrate digestion",
+                                          "fat digestion",
+                                          "enzymes in digestion"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_016_04",
+                                   "name": "Absorption",
+                                   "aliases": [
+                                          "absorption in small intestine",
+                                          "villi",
+                                          "microvilli",
+                                          "assimilation"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_016_05",
+                                   "name": "Digestive Disorders",
+                                   "aliases": [
+                                          "jaundice",
+                                          "vomiting",
+                                          "diarrhoea",
+                                          "constipation",
+                                          "indigestion",
+                                          "PEM"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "neet_bio_017",
+                     "name": "Breathing and Exchange of Gases",
+                     "parent_unit": "Human Physiology",
+                     "class": 11,
+                     "aliases": [
+                            "Respiratory System",
+                            "Human Respiratory System",
+                            "Gas Exchange"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_017_01",
+                                   "name": "Respiratory Organs",
+                                   "aliases": [
+                                          "lungs",
+                                          "alveoli",
+                                          "trachea",
+                                          "bronchi",
+                                          "diaphragm",
+                                          "pleural membrane"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_017_02",
+                                   "name": "Mechanism of Breathing",
+                                   "aliases": [
+                                          "inspiration",
+                                          "expiration",
+                                          "pulmonary ventilation"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_017_03",
+                                   "name": "Lung Volumes and Capacities",
+                                   "aliases": [
+                                          "tidal volume",
+                                          "vital capacity",
+                                          "residual volume",
+                                          "total lung capacity",
+                                          "inspiratory reserve volume"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_017_04",
+                                   "name": "Gas Transport",
+                                   "aliases": [
+                                          "oxygen transport",
+                                          "carbon dioxide transport",
+                                          "haemoglobin",
+                                          "oxygen dissociation curve",
+                                          "Bohr effect",
+                                          "chloride shift"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_017_05",
+                                   "name": "Respiratory Disorders",
+                                   "aliases": [
+                                          "asthma",
+                                          "emphysema",
+                                          "occupational lung disease"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "neet_bio_018",
+                     "name": "Body Fluids and Circulation",
+                     "parent_unit": "Human Physiology",
+                     "class": 11,
+                     "aliases": [
+                            "Circulatory System",
+                            "Heart",
+                            "Blood",
+                            "Lymph"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_018_01",
+                                   "name": "Blood",
+                                   "aliases": [
+                                          "plasma",
+                                          "blood cells",
+                                          "RBC",
+                                          "WBC",
+                                          "platelets",
+                                          "blood groups",
+                                          "ABO system",
+                                          "Rh factor"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_018_02",
+                                   "name": "Heart",
+                                   "aliases": [
+                                          "human heart",
+                                          "cardiac cycle",
+                                          "heart sounds",
+                                          "cardiac output",
+                                          "stroke volume"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_018_03",
+                                   "name": "Blood Vessels",
+                                   "aliases": [
+                                          "arteries",
+                                          "veins",
+                                          "capillaries",
+                                          "blood pressure",
+                                          "systole",
+                                          "diastole"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_018_04",
+                                   "name": "ECG",
+                                   "aliases": [
+                                          "electrocardiogram",
+                                          "P wave",
+                                          "QRS complex",
+                                          "T wave"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_018_05",
+                                   "name": "Circulatory Disorders",
+                                   "aliases": [
+                                          "hypertension",
+                                          "coronary artery disease",
+                                          "angina pectoris",
+                                          "heart failure"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "hard"
+              },
+              {
+                     "id": "neet_bio_019",
+                     "name": "Excretory Products and Their Elimination",
+                     "parent_unit": "Human Physiology",
+                     "class": 11,
+                     "aliases": [
+                            "Excretory System",
+                            "Kidney",
+                            "Urine Formation"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_019_01",
+                                   "name": "Excretory Organs",
+                                   "aliases": [
+                                          "kidney",
+                                          "nephron",
+                                          "Bowman's capsule",
+                                          "loop of Henle",
+                                          "collecting duct"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_019_02",
+                                   "name": "Urine Formation",
+                                   "aliases": [
+                                          "glomerular filtration",
+                                          "tubular reabsorption",
+                                          "tubular secretion",
+                                          "GFR"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_019_03",
+                                   "name": "Countercurrent Mechanism",
+                                   "aliases": [
+                                          "concentration of urine",
+                                          "countercurrent multiplier"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_019_04",
+                                   "name": "Regulation of Kidney Function",
+                                   "aliases": [
+                                          "ADH",
+                                          "ANF",
+                                          "juxtaglomerular apparatus",
+                                          "RAAS"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_019_05",
+                                   "name": "Disorders",
+                                   "aliases": [
+                                          "uremia",
+                                          "renal failure",
+                                          "kidney stones",
+                                          "dialysis",
+                                          "kidney transplant"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "neet_bio_020",
+                     "name": "Locomotion and Movement",
+                     "parent_unit": "Human Physiology",
+                     "class": 11,
+                     "aliases": [
+                            "Muscular System",
+                            "Skeletal System",
+                            "Muscle Contraction"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_020_01",
+                                   "name": "Types of Movement",
+                                   "aliases": [
+                                          "amoeboid movement",
+                                          "ciliary movement",
+                                          "muscular movement"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_020_02",
+                                   "name": "Muscle Structure",
+                                   "aliases": [
+                                          "sarcomere",
+                                          "actin",
+                                          "myosin",
+                                          "H-zone",
+                                          "A-band",
+                                          "I-band",
+                                          "Z-line"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_020_03",
+                                   "name": "Muscle Contraction",
+                                   "aliases": [
+                                          "sliding filament theory",
+                                          "neuromuscular junction",
+                                          "calcium ions",
+                                          "rigor mortis"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_020_04",
+                                   "name": "Skeletal System",
+                                   "aliases": [
+                                          "axial skeleton",
+                                          "appendicular skeleton",
+                                          "types of joints",
+                                          "bones",
+                                          "cartilage"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_020_05",
+                                   "name": "Disorders",
+                                   "aliases": [
+                                          "myasthenia gravis",
+                                          "muscular dystrophy",
+                                          "tetany",
+                                          "arthritis",
+                                          "osteoporosis",
+                                          "gout"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "neet_bio_021",
+                     "name": "Neural Control and Coordination",
+                     "parent_unit": "Human Physiology",
+                     "class": 11,
+                     "aliases": [
+                            "Nervous System",
+                            "Human Nervous System",
+                            "Brain"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_021_01",
+                                   "name": "Neuron Structure",
+                                   "aliases": [
+                                          "nerve cell",
+                                          "dendrite",
+                                          "axon",
+                                          "myelin sheath",
+                                          "synapse",
+                                          "neurotransmitter"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_021_02",
+                                   "name": "Nerve Impulse",
+                                   "aliases": [
+                                          "resting potential",
+                                          "action potential",
+                                          "depolarization",
+                                          "repolarization",
+                                          "saltatory conduction"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_021_03",
+                                   "name": "Central Nervous System",
+                                   "aliases": [
+                                          "brain",
+                                          "spinal cord",
+                                          "cerebrum",
+                                          "cerebellum",
+                                          "medulla oblongata",
+                                          "hypothalamus",
+                                          "thalamus"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_021_04",
+                                   "name": "Reflex Action",
+                                   "aliases": [
+                                          "reflex arc",
+                                          "conditioned reflex",
+                                          "unconditioned reflex"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_021_05",
+                                   "name": "Sense Organs",
+                                   "aliases": [
+                                          "eye",
+                                          "ear",
+                                          "retina",
+                                          "cochlea",
+                                          "organ of Corti",
+                                          "vestibular apparatus"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_022"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "hard"
+              },
+              {
+                     "id": "neet_bio_022",
+                     "name": "Chemical Coordination and Integration",
+                     "parent_unit": "Human Physiology",
+                     "class": 11,
+                     "aliases": [
+                            "Endocrine System",
+                            "Hormones",
+                            "Endocrine Glands"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_022_01",
+                                   "name": "Endocrine Glands",
+                                   "aliases": [
+                                          "pituitary gland",
+                                          "thyroid gland",
+                                          "parathyroid gland",
+                                          "adrenal gland",
+                                          "pancreas",
+                                          "pineal gland",
+                                          "thymus"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_022_02",
+                                   "name": "Hormones",
+                                   "aliases": [
+                                          "GH",
+                                          "TSH",
+                                          "ACTH",
+                                          "FSH",
+                                          "LH",
+                                          "prolactin",
+                                          "oxytocin",
+                                          "ADH",
+                                          "T3",
+                                          "T4",
+                                          "insulin",
+                                          "glucagon",
+                                          "adrenaline",
+                                          "cortisol"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_022_03",
+                                   "name": "Hormone Action",
+                                   "aliases": [
+                                          "mechanism of hormone action",
+                                          "feedback regulation",
+                                          "positive feedback",
+                                          "negative feedback"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_022_04",
+                                   "name": "Disorders",
+                                   "aliases": [
+                                          "diabetes",
+                                          "goitre",
+                                          "cretinism",
+                                          "Addison's disease",
+                                          "Cushing's syndrome",
+                                          "acromegaly",
+                                          "dwarfism"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_021"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "hard"
+              },
+              {
+                     "id": "neet_bio_023",
+                     "name": "Reproduction in Organisms",
+                     "parent_unit": "Reproduction",
+                     "class": 12,
+                     "aliases": [
+                            "Asexual Reproduction",
+                            "Sexual Reproduction"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_023_01",
+                                   "name": "Asexual Reproduction",
+                                   "aliases": [
+                                          "binary fission",
+                                          "budding",
+                                          "fragmentation",
+                                          "sporulation",
+                                          "vegetative propagation"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_023_02",
+                                   "name": "Sexual Reproduction",
+                                   "aliases": [
+                                          "gamete formation",
+                                          "fertilization",
+                                          "zygote",
+                                          "embryo development"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_023_03",
+                                   "name": "Events in Sexual Reproduction",
+                                   "aliases": [
+                                          "pre-fertilisation",
+                                          "post-fertilisation",
+                                          "syngamy"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_024",
+                            "neet_bio_025"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "easy"
+              },
+              {
+                     "id": "neet_bio_024",
+                     "name": "Sexual Reproduction in Flowering Plants",
+                     "parent_unit": "Reproduction",
+                     "class": 12,
+                     "aliases": [
+                            "Plant Reproduction",
+                            "Pollination",
+                            "Fertilization in Plants"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_024_01",
+                                   "name": "Flower Structure",
+                                   "aliases": [
+                                          "stamen",
+                                          "carpel",
+                                          "anther",
+                                          "ovule",
+                                          "embryo sac",
+                                          "pollen grain"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_024_02",
+                                   "name": "Pollination",
+                                   "aliases": [
+                                          "self-pollination",
+                                          "cross-pollination",
+                                          "agents of pollination",
+                                          "wind pollination",
+                                          "insect pollination"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_024_03",
+                                   "name": "Double Fertilization",
+                                   "aliases": [
+                                          "syngamy",
+                                          "triple fusion",
+                                          "endosperm development",
+                                          "embryo development"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_024_04",
+                                   "name": "Post-fertilisation Events",
+                                   "aliases": [
+                                          "seed development",
+                                          "fruit development",
+                                          "apomixis",
+                                          "polyembryony"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_024_05",
+                                   "name": "Outbreeding Devices",
+                                   "aliases": [
+                                          "self-incompatibility",
+                                          "dioecy",
+                                          "dichogamy"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_023"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "hard"
+              },
+              {
+                     "id": "neet_bio_025",
+                     "name": "Human Reproduction",
+                     "parent_unit": "Reproduction",
+                     "class": 12,
+                     "aliases": [
+                            "Reproductive System",
+                            "Human Reproductive System",
+                            "Embryo Development"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_025_01",
+                                   "name": "Male Reproductive System",
+                                   "aliases": [
+                                          "testis",
+                                          "seminiferous tubules",
+                                          "spermatogenesis",
+                                          "sperm structure",
+                                          "accessory glands"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_025_02",
+                                   "name": "Female Reproductive System",
+                                   "aliases": [
+                                          "ovary",
+                                          "uterus",
+                                          "fallopian tube",
+                                          "oogenesis",
+                                          "ovulation"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_025_03",
+                                   "name": "Menstrual Cycle",
+                                   "aliases": [
+                                          "menstruation",
+                                          "follicular phase",
+                                          "ovulatory phase",
+                                          "luteal phase",
+                                          "hormonal regulation of menstrual cycle"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_025_04",
+                                   "name": "Fertilisation and Development",
+                                   "aliases": [
+                                          "implantation",
+                                          "pregnancy",
+                                          "placenta",
+                                          "parturition",
+                                          "lactation"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_025_05",
+                                   "name": "Embryo Development",
+                                   "aliases": [
+                                          "cleavage",
+                                          "blastocyst",
+                                          "gastrulation",
+                                          "organogenesis"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_023",
+                            "neet_bio_026"
+                     ],
+                     "typical_marks_range": [
+                            8,
+                            16
+                     ],
+                     "difficulty_tier": "hard"
+              },
+              {
+                     "id": "neet_bio_026",
+                     "name": "Reproductive Health",
+                     "parent_unit": "Reproduction",
+                     "class": 12,
+                     "aliases": [
+                            "Contraception",
+                            "STDs",
+                            "Infertility",
+                            "ART"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_026_01",
+                                   "name": "Reproductive Health",
+                                   "aliases": [
+                                          "population control",
+                                          "birth control",
+                                          "family planning"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_026_02",
+                                   "name": "Contraception",
+                                   "aliases": [
+                                          "barrier methods",
+                                          "IUD",
+                                          "oral contraceptives",
+                                          "surgical methods",
+                                          "MTP"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_026_03",
+                                   "name": "STDs",
+                                   "aliases": [
+                                          "sexually transmitted diseases",
+                                          "AIDS",
+                                          "gonorrhoea",
+                                          "syphilis",
+                                          "genital herpes",
+                                          "hepatitis B"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_026_04",
+                                   "name": "Infertility and ART",
+                                   "aliases": [
+                                          "IVF",
+                                          "ZIFT",
+                                          "GIFT",
+                                          "ICSI",
+                                          "test tube baby",
+                                          "surrogacy"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_025"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "easy"
+              },
+              {
+                     "id": "neet_bio_027",
+                     "name": "Genetics and Evolution",
+                     "parent_unit": "Genetics and Evolution",
+                     "class": 12,
+                     "aliases": [
+                            "Heredity",
+                            "Mendel's Laws",
+                            "Molecular Biology",
+                            "DNA",
+                            "Gene Expression",
+                            "Evolution"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_027_01",
+                                   "name": "Mendel's Laws",
+                                   "aliases": [
+                                          "law of dominance",
+                                          "law of segregation",
+                                          "law of independent assortment",
+                                          "monohybrid cross",
+                                          "dihybrid cross",
+                                          "test cross"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_027_02",
+                                   "name": "Chromosomal Theory",
+                                   "aliases": [
+                                          "chromosomal theory of inheritance",
+                                          "linkage",
+                                          "recombination",
+                                          "crossing over",
+                                          "sex determination",
+                                          "sex-linked inheritance"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_027_03",
+                                   "name": "Molecular Basis of Inheritance",
+                                   "aliases": [
+                                          "DNA structure",
+                                          "DNA replication",
+                                          "central dogma",
+                                          "transcription",
+                                          "translation",
+                                          "genetic code",
+                                          "lac operon",
+                                          "gene regulation"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_027_04",
+                                   "name": "Human Genetics",
+                                   "aliases": [
+                                          "pedigree analysis",
+                                          "genetic disorders",
+                                          "haemophilia",
+                                          "colour blindness",
+                                          "sickle cell anaemia",
+                                          "Down syndrome",
+                                          "Turner syndrome",
+                                          "Klinefelter syndrome"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_027_05",
+                                   "name": "Evolution",
+                                   "aliases": [
+                                          "origin of life",
+                                          "Darwin's theory",
+                                          "natural selection",
+                                          "Hardy-Weinberg principle",
+                                          "adaptive radiation",
+                                          "human evolution",
+                                          "Lamarckism",
+                                          "speciation"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "neet_bio_010",
+                            "neet_bio_028"
+                     ],
+                     "typical_marks_range": [
+                            12,
+                            24
+                     ],
+                     "difficulty_tier": "hard"
+              },
+              {
+                     "id": "neet_bio_028",
+                     "name": "Biology in Human Welfare and Ecology",
+                     "parent_unit": "Ecology and Environment",
+                     "class": 12,
+                     "aliases": [
+                            "Human Health and Disease",
+                            "Biotechnology",
+                            "Ecology",
+                            "Ecosystem",
+                            "Biodiversity"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "neet_bio_028_01",
+                                   "name": "Human Health and Disease",
+                                   "aliases": [
+                                          "immunity",
+                                          "innate immunity",
+                                          "adaptive immunity",
+                                          "antibodies",
+                                          "vaccination",
+                                          "allergies",
+                                          "autoimmunity",
+                                          "AIDS",
+                                          "cancer",
+                                          "drugs and alcohol abuse"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_028_02",
+                                   "name": "Microbes in Human Welfare",
+                                   "aliases": [
+                                          "fermented foods",
+                                          "industrial products",
+                                          "antibiotics",
+                                          "biogas",
+                                          "sewage treatment",
+                                          "biocontrol agents",
+                                          "biofertilizers"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_028_03",
+                                   "name": "Biotechnology",
+                                   "aliases": [
+                                          "recombinant DNA technology",
+                                          "PCR",
+                                          "gel electrophoresis",
+                                          "restriction enzymes",
+                                          "cloning vectors",
+                                          "gene cloning",
+                                          "transgenic organisms",
+                                          "gene therapy",
+                                          "GMO"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_028_04",
+                                   "name": "Organisms and Environment",
+                                   "aliases": [
+                                          "ecology",
+                                          "population",
+                                          "community",
+                                          "ecosystem",
+                                          "biome"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_028_05",
+                                   "name": "Ecosystem",
+                                   "aliases": [
+                                          "food chain",
+                                          "food web",
+                                          "trophic levels",
+                                          "energy flow",
+                                          "10% law",
+                                          "ecological pyramids",
+                                          "nutrient cycling",
+                                          "ecological succession"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_028_06",
+                                   "name": "Biodiversity and Conservation",
+                                   "aliases": [
+                                          "biodiversity hotspots",
+                                          "endangered species",
+                                          "Red Data Book",
+                                          "in-situ conservation",
+                                          "ex-situ conservation",
+                                          "national parks",
+                                          "sanctuaries"
+                                   ]
+                            },
+                            {
+                                   "id": "neet_bio_028_07",
+                                   "name": "Environmental Issues",
+                                   "aliases": [
+                                          "pollution",
+                                          "ozone depletion",
+                                          "global warming",
+                                          "deforestation",
+                                          "eutrophication",
+                                          "biomagnification"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            12,
+                            24
+                     ],
+                     "difficulty_tier": "medium"
+              }
+       ]
+}

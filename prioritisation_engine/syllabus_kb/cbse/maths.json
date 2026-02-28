@@ -1,0 +1,52 @@
+{
+       "exam": "cbse",
+       "subject": "Maths",
+       "source": "CBSE Class 11+12 Mathematics Syllabus (NCERT Based, 2025-26)",
+       "note": "CBSE Maths syllabus is identical to NCERT. Cross-references to jee_main for shared topic structure.",
+       "total_chapters": 24,
+       "inherits_from": "jee_main/maths.json",
+       "scope_differences": {
+              "board_specific_focus": [
+                     "NCERT examples and exercises",
+                     "Step-by-step solutions",
+                     "Proofs and derivations from NCERT",
+                     "Graph-based questions",
+                     "Application-based questions"
+              ]
+       },
+       "chapter_marks_distribution": {
+              "class_11": {
+                     "Sets": 3,
+                     "Relations and Functions": 5,
+                     "Trigonometric Functions": 8,
+                     "Mathematical Induction": 4,
+                     "Complex Numbers and Quadratic Equations": 5,
+                     "Linear Inequalities": 4,
+                     "Permutations and Combinations": 6,
+                     "Binomial Theorem": 4,
+                     "Sequences and Series": 6,
+                     "Straight Lines": 5,
+                     "Conic Sections": 5,
+                     "Limits and Derivatives": 7,
+                     "Mathematical Reasoning": 2,
+                     "Statistics": 5,
+                     "Probability": 6
+              },
+              "class_12": {
+                     "Relations and Functions": 6,
+                     "Inverse Trigonometric Functions": 4,
+                     "Matrices": 5,
+                     "Determinants": 5,
+                     "Continuity and Differentiability": 8,
+                     "Application of Derivatives": 6,
+                     "Integrals": 10,
+                     "Application of Integrals": 5,
+                     "Differential Equations": 5,
+                     "Vector Algebra": 5,
+                     "Three Dimensional Geometry": 6,
+                     "Linear Programming": 5,
+                     "Probability": 8
+              }
+       },
+       "chapters": "Inherits from jee_main/maths.json with identical chapter structure. CBSE board weightage captured above."
+}

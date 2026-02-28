@@ -1,0 +1,1861 @@
+{
+       "exam": "jee_main",
+       "subject": "Chemistry",
+       "source": "NTA JEE Main Syllabus 2025-26 (based on NCERT Class 11+12)",
+       "total_chapters": 30,
+       "chapters": [
+              {
+                     "id": "jee_chem_001",
+                     "name": "Some Basic Concepts of Chemistry",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Basic Concepts",
+                            "Mole Concept",
+                            "Stoichiometry"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_001_01",
+                                   "name": "Mole Concept",
+                                   "aliases": [
+                                          "mole",
+                                          "Avogadro's number",
+                                          "molar mass",
+                                          "molecular weight",
+                                          "atomic mass unit"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_001_02",
+                                   "name": "Stoichiometry",
+                                   "aliases": [
+                                          "stoichiometric calculations",
+                                          "limiting reagent",
+                                          "excess reagent"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_001_03",
+                                   "name": "Concentration Terms",
+                                   "aliases": [
+                                          "molarity",
+                                          "molality",
+                                          "normality",
+                                          "mole fraction",
+                                          "ppm",
+                                          "mass percentage"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_001_04",
+                                   "name": "Empirical and Molecular Formula",
+                                   "aliases": [
+                                          "empirical formula",
+                                          "molecular formula",
+                                          "percentage composition"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "easy"
+              },
+              {
+                     "id": "jee_chem_002",
+                     "name": "Atomic Structure",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Structure of Atom",
+                            "Quantum Mechanical Model",
+                            "Bohr's Model"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_002_01",
+                                   "name": "Bohr's Model",
+                                   "aliases": [
+                                          "Bohr's theory",
+                                          "hydrogen spectrum",
+                                          "energy levels",
+                                          "Rydberg formula"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_002_02",
+                                   "name": "Quantum Numbers",
+                                   "aliases": [
+                                          "principal quantum number",
+                                          "azimuthal quantum number",
+                                          "magnetic quantum number",
+                                          "spin quantum number",
+                                          "n l m s"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_002_03",
+                                   "name": "Electronic Configuration",
+                                   "aliases": [
+                                          "Aufbau principle",
+                                          "Pauli exclusion principle",
+                                          "Hund's rule",
+                                          "orbital filling order"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_002_04",
+                                   "name": "Shapes of Orbitals",
+                                   "aliases": [
+                                          "s orbital",
+                                          "p orbital",
+                                          "d orbital",
+                                          "f orbital",
+                                          "nodal plane",
+                                          "radial node"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_002_05",
+                                   "name": "Dual Nature and de Broglie",
+                                   "aliases": [
+                                          "de Broglie wavelength",
+                                          "Heisenberg uncertainty principle",
+                                          "photoelectric effect"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "jee_chem_003"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "jee_chem_003",
+                     "name": "Chemical Bonding and Molecular Structure",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Chemical Bonding",
+                            "VSEPR Theory",
+                            "Molecular Orbital Theory",
+                            "MOT"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_003_01",
+                                   "name": "Ionic Bond",
+                                   "aliases": [
+                                          "electrovalent bond",
+                                          "lattice energy",
+                                          "Born-Haber cycle"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_003_02",
+                                   "name": "Covalent Bond",
+                                   "aliases": [
+                                          "Lewis structure",
+                                          "octet rule",
+                                          "sigma bond",
+                                          "pi bond",
+                                          "bond order",
+                                          "bond length",
+                                          "bond energy"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_003_03",
+                                   "name": "VSEPR Theory",
+                                   "aliases": [
+                                          "molecular geometry",
+                                          "hybridization",
+                                          "sp3",
+                                          "sp2",
+                                          "sp",
+                                          "sp3d",
+                                          "sp3d2",
+                                          "bond angle"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_003_04",
+                                   "name": "Molecular Orbital Theory",
+                                   "aliases": [
+                                          "MOT",
+                                          "bonding orbital",
+                                          "antibonding orbital",
+                                          "bond order from MOT",
+                                          "paramagnetic",
+                                          "diamagnetic"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_003_05",
+                                   "name": "Hydrogen Bond",
+                                   "aliases": [
+                                          "intermolecular forces",
+                                          "van der Waals forces",
+                                          "London dispersion",
+                                          "dipole-dipole"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_003_06",
+                                   "name": "Metallic Bond",
+                                   "aliases": [
+                                          "electron sea model",
+                                          "metallic bonding"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_003_07",
+                                   "name": "Resonance",
+                                   "aliases": [
+                                          "resonance structures",
+                                          "delocalization",
+                                          "formal charge"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "jee_chem_002"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "hard"
+              },
+              {
+                     "id": "jee_chem_004",
+                     "name": "Chemical Thermodynamics",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Thermodynamics",
+                            "Thermochemistry",
+                            "Enthalpy",
+                            "Entropy",
+                            "Gibbs Free Energy"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_004_01",
+                                   "name": "First Law of Thermodynamics",
+                                   "aliases": [
+                                          "internal energy",
+                                          "ΔU=q+w",
+                                          "state function",
+                                          "path function"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_004_02",
+                                   "name": "Enthalpy",
+                                   "aliases": [
+                                          "enthalpy change",
+                                          "ΔH",
+                                          "enthalpy of reaction",
+                                          "enthalpy of formation",
+                                          "enthalpy of combustion"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_004_03",
+                                   "name": "Hess's Law",
+                                   "aliases": [
+                                          "Hess's law of constant heat summation",
+                                          "Born-Haber cycle",
+                                          "bond enthalpy"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_004_04",
+                                   "name": "Entropy and Second Law",
+                                   "aliases": [
+                                          "entropy",
+                                          "ΔS",
+                                          "spontaneity",
+                                          "second law of thermodynamics"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_004_05",
+                                   "name": "Gibbs Free Energy",
+                                   "aliases": [
+                                          "ΔG",
+                                          "ΔG=ΔH-TΔS",
+                                          "spontaneous process",
+                                          "equilibrium condition"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "jee_chem_005"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "hard"
+              },
+              {
+                     "id": "jee_chem_005",
+                     "name": "Chemical Equilibrium",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Equilibrium",
+                            "Le Chatelier's Principle",
+                            "Equilibrium Constant"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_005_01",
+                                   "name": "Law of Mass Action",
+                                   "aliases": [
+                                          "equilibrium constant",
+                                          "Kc",
+                                          "Kp",
+                                          "relation between Kc and Kp"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_005_02",
+                                   "name": "Le Chatelier's Principle",
+                                   "aliases": [
+                                          "effect of concentration",
+                                          "effect of temperature",
+                                          "effect of pressure",
+                                          "shift in equilibrium"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_005_03",
+                                   "name": "Ionic Equilibrium",
+                                   "aliases": [
+                                          "acids and bases",
+                                          "pH",
+                                          "pOH",
+                                          "buffer solution",
+                                          "Henderson-Hasselbalch equation",
+                                          "solubility product",
+                                          "Ksp",
+                                          "common ion effect"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_005_04",
+                                   "name": "Degree of Dissociation",
+                                   "aliases": [
+                                          "α",
+                                          "van't Hoff factor",
+                                          "abnormal molecular mass"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "jee_chem_004"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "hard"
+              },
+              {
+                     "id": "jee_chem_006",
+                     "name": "Redox Reactions and Electrochemistry",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Electrochemistry",
+                            "Redox Reactions",
+                            "Galvanic Cell",
+                            "Electrolysis"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_006_01",
+                                   "name": "Oxidation and Reduction",
+                                   "aliases": [
+                                          "oxidation number",
+                                          "oxidation state",
+                                          "redox reaction",
+                                          "balancing redox reactions",
+                                          "half-reaction method"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_006_02",
+                                   "name": "Electrochemical Cells",
+                                   "aliases": [
+                                          "galvanic cell",
+                                          "voltaic cell",
+                                          "Daniel cell",
+                                          "electrode potential",
+                                          "standard electrode potential",
+                                          "EMF",
+                                          "cell notation"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_006_03",
+                                   "name": "Nernst Equation",
+                                   "aliases": [
+                                          "Nernst equation",
+                                          "concentration cell",
+                                          "effect of concentration on EMF"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_006_04",
+                                   "name": "Electrolysis",
+                                   "aliases": [
+                                          "Faraday's laws",
+                                          "electrolytic cell",
+                                          "electroplating",
+                                          "electrolysis of water"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_006_05",
+                                   "name": "Conductance",
+                                   "aliases": [
+                                          "specific conductance",
+                                          "molar conductivity",
+                                          "Kohlrausch's law",
+                                          "electrolyte",
+                                          "strong electrolyte",
+                                          "weak electrolyte"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "jee_chem_005"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "hard"
+              },
+              {
+                     "id": "jee_chem_007",
+                     "name": "Chemical Kinetics",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Reaction Kinetics",
+                            "Rate of Reaction",
+                            "Order of Reaction"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_007_01",
+                                   "name": "Rate of Reaction",
+                                   "aliases": [
+                                          "average rate",
+                                          "instantaneous rate",
+                                          "rate constant",
+                                          "rate law",
+                                          "rate expression"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_007_02",
+                                   "name": "Order of Reaction",
+                                   "aliases": [
+                                          "zero order",
+                                          "first order",
+                                          "second order",
+                                          "pseudo first order",
+                                          "molecularity"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_007_03",
+                                   "name": "Integrated Rate Laws",
+                                   "aliases": [
+                                          "half-life",
+                                          "first order kinetics",
+                                          "t₁/₂",
+                                          "rate constant units"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_007_04",
+                                   "name": "Arrhenius Equation",
+                                   "aliases": [
+                                          "activation energy",
+                                          "Ea",
+                                          "temperature dependence",
+                                          "collision theory",
+                                          "pre-exponential factor"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_007_05",
+                                   "name": "Catalysis",
+                                   "aliases": [
+                                          "catalyst",
+                                          "homogeneous catalysis",
+                                          "heterogeneous catalysis",
+                                          "enzyme catalysis"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "jee_chem_006"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "jee_chem_008",
+                     "name": "Solutions and Colligative Properties",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Solutions",
+                            "Colligative Properties",
+                            "Raoult's Law"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_008_01",
+                                   "name": "Types of Solutions",
+                                   "aliases": [
+                                          "solute",
+                                          "solvent",
+                                          "concentration units",
+                                          "Henry's law"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_008_02",
+                                   "name": "Raoult's Law",
+                                   "aliases": [
+                                          "ideal solution",
+                                          "non-ideal solution",
+                                          "vapour pressure lowering",
+                                          "positive deviation",
+                                          "negative deviation",
+                                          "azeotropes"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_008_03",
+                                   "name": "Colligative Properties",
+                                   "aliases": [
+                                          "boiling point elevation",
+                                          "freezing point depression",
+                                          "osmotic pressure",
+                                          "relative lowering of vapour pressure"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_008_04",
+                                   "name": "Van't Hoff Factor",
+                                   "aliases": [
+                                          "i factor",
+                                          "abnormal molar mass",
+                                          "association",
+                                          "dissociation"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "jee_chem_009",
+                     "name": "Solid State",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Crystal Structure",
+                            "Unit Cell",
+                            "Crystal Lattice"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_009_01",
+                                   "name": "Crystal Lattice and Unit Cell",
+                                   "aliases": [
+                                          "Bravais lattice",
+                                          "primitive cell",
+                                          "BCC",
+                                          "FCC",
+                                          "HCP",
+                                          "simple cubic"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_009_02",
+                                   "name": "Packing Efficiency",
+                                   "aliases": [
+                                          "close packing",
+                                          "coordination number",
+                                          "packing fraction",
+                                          "voids",
+                                          "tetrahedral void",
+                                          "octahedral void"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_009_03",
+                                   "name": "Defects in Solids",
+                                   "aliases": [
+                                          "point defects",
+                                          "Schottky defect",
+                                          "Frenkel defect",
+                                          "F-centre",
+                                          "non-stoichiometric defect"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_009_04",
+                                   "name": "Band Theory",
+                                   "aliases": [
+                                          "conductors",
+                                          "insulators",
+                                          "semiconductors",
+                                          "n-type",
+                                          "p-type"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "jee_chem_010",
+                     "name": "Surface Chemistry",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Adsorption",
+                            "Catalysis",
+                            "Colloids",
+                            "Emulsions"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_010_01",
+                                   "name": "Adsorption",
+                                   "aliases": [
+                                          "physisorption",
+                                          "chemisorption",
+                                          "adsorption isotherm",
+                                          "Freundlich isotherm",
+                                          "Langmuir isotherm"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_010_02",
+                                   "name": "Colloids",
+                                   "aliases": [
+                                          "colloidal solution",
+                                          "Tyndall effect",
+                                          "Brownian motion",
+                                          "coagulation",
+                                          "peptization",
+                                          "emulsion",
+                                          "micelle"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_010_03",
+                                   "name": "Catalysis",
+                                   "aliases": [
+                                          "homogeneous catalysis",
+                                          "heterogeneous catalysis",
+                                          "enzyme catalysis",
+                                          "zeolites"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            4
+                     ],
+                     "difficulty_tier": "easy"
+              },
+              {
+                     "id": "jee_chem_011",
+                     "name": "Classification of Elements and Periodicity",
+                     "parent_unit": "Inorganic Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Periodic Table",
+                            "Periodic Properties",
+                            "Periodicity in Properties"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_011_01",
+                                   "name": "Modern Periodic Table",
+                                   "aliases": [
+                                          "periods",
+                                          "groups",
+                                          "blocks",
+                                          "s-block",
+                                          "p-block",
+                                          "d-block",
+                                          "f-block"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_011_02",
+                                   "name": "Periodic Trends",
+                                   "aliases": [
+                                          "atomic radius",
+                                          "ionic radius",
+                                          "ionization energy",
+                                          "electron affinity",
+                                          "electronegativity",
+                                          "metallic character"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_011_03",
+                                   "name": "Electron Configuration and Periodicity",
+                                   "aliases": [
+                                          "valence electrons",
+                                          "oxidation states",
+                                          "diagonal relationship"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "jee_chem_002"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "easy"
+              },
+              {
+                     "id": "jee_chem_012",
+                     "name": "s-Block Elements",
+                     "parent_unit": "Inorganic Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Alkali Metals",
+                            "Alkaline Earth Metals",
+                            "Group 1",
+                            "Group 2"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_012_01",
+                                   "name": "Alkali Metals",
+                                   "aliases": [
+                                          "lithium",
+                                          "sodium",
+                                          "potassium",
+                                          "Group 1 elements",
+                                          "Na₂CO₃",
+                                          "NaOH",
+                                          "NaHCO₃"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_012_02",
+                                   "name": "Alkaline Earth Metals",
+                                   "aliases": [
+                                          "beryllium",
+                                          "magnesium",
+                                          "calcium",
+                                          "Group 2 elements",
+                                          "CaO",
+                                          "Ca(OH)₂",
+                                          "plaster of Paris"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_012_03",
+                                   "name": "Anomalous Properties of Li and Be",
+                                   "aliases": [
+                                          "diagonal relationship",
+                                          "lithium anomaly"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "jee_chem_011"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            4
+                     ],
+                     "difficulty_tier": "easy"
+              },
+              {
+                     "id": "jee_chem_013",
+                     "name": "p-Block Elements",
+                     "parent_unit": "Inorganic Chemistry",
+                     "class": [
+                            11,
+                            12
+                     ],
+                     "aliases": [
+                            "Group 13-18 Elements",
+                            "Boron Family",
+                            "Carbon Family",
+                            "Nitrogen Family",
+                            "Oxygen Family",
+                            "Halogens",
+                            "Noble Gases"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_013_01",
+                                   "name": "Group 13 (Boron Family)",
+                                   "aliases": [
+                                          "boron",
+                                          "aluminium",
+                                          "borax",
+                                          "boric acid",
+                                          "boron hydrides",
+                                          "diborane"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_013_02",
+                                   "name": "Group 14 (Carbon Family)",
+                                   "aliases": [
+                                          "carbon",
+                                          "silicon",
+                                          "allotropes of carbon",
+                                          "diamond",
+                                          "graphite",
+                                          "fullerene",
+                                          "silicones",
+                                          "silicates"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_013_03",
+                                   "name": "Group 15 (Nitrogen Family)",
+                                   "aliases": [
+                                          "nitrogen",
+                                          "phosphorus",
+                                          "ammonia",
+                                          "nitric acid",
+                                          "phosphine",
+                                          "PCl3",
+                                          "PCl5",
+                                          "oxides of nitrogen"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_013_04",
+                                   "name": "Group 16 (Oxygen Family)",
+                                   "aliases": [
+                                          "oxygen",
+                                          "sulphur",
+                                          "ozone",
+                                          "sulphuric acid",
+                                          "H₂SO₄",
+                                          "SO₂",
+                                          "SO₃",
+                                          "H₂S"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_013_05",
+                                   "name": "Group 17 (Halogens)",
+                                   "aliases": [
+                                          "fluorine",
+                                          "chlorine",
+                                          "bromine",
+                                          "iodine",
+                                          "HCl",
+                                          "HF",
+                                          "interhalogen compounds",
+                                          "oxoacids of halogens"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_013_06",
+                                   "name": "Group 18 (Noble Gases)",
+                                   "aliases": [
+                                          "helium",
+                                          "neon",
+                                          "argon",
+                                          "xenon compounds",
+                                          "XeF₂",
+                                          "XeF₄",
+                                          "XeF₆"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "jee_chem_011"
+                     ],
+                     "typical_marks_range": [
+                            8,
+                            16
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "jee_chem_014",
+                     "name": "d-Block and f-Block Elements",
+                     "parent_unit": "Inorganic Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Transition Elements",
+                            "d-Block Elements",
+                            "f-Block Elements",
+                            "Lanthanides",
+                            "Actinides",
+                            "Inner Transition Elements"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_014_01",
+                                   "name": "General Properties of Transition Elements",
+                                   "aliases": [
+                                          "variable oxidation states",
+                                          "coloured ions",
+                                          "catalytic activity",
+                                          "magnetic properties",
+                                          "complex formation"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_014_02",
+                                   "name": "Important Compounds",
+                                   "aliases": [
+                                          "KMnO₄",
+                                          "K₂Cr₂O₇",
+                                          "potassium permanganate",
+                                          "potassium dichromate"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_014_03",
+                                   "name": "Lanthanides and Actinides",
+                                   "aliases": [
+                                          "lanthanoid contraction",
+                                          "f-block elements",
+                                          "inner transition metals"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "jee_chem_015"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "jee_chem_015",
+                     "name": "Coordination Compounds",
+                     "parent_unit": "Inorganic Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Complex Compounds",
+                            "Werner's Theory",
+                            "Crystal Field Theory",
+                            "CFT",
+                            "Ligands"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_015_01",
+                                   "name": "Werner's Theory",
+                                   "aliases": [
+                                          "coordination number",
+                                          "ligand",
+                                          "central metal ion",
+                                          "coordination sphere"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_015_02",
+                                   "name": "IUPAC Nomenclature",
+                                   "aliases": [
+                                          "naming coordination compounds",
+                                          "complex nomenclature"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_015_03",
+                                   "name": "Isomerism",
+                                   "aliases": [
+                                          "geometrical isomerism",
+                                          "optical isomerism",
+                                          "linkage isomerism",
+                                          "coordination isomerism",
+                                          "ionization isomerism"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_015_04",
+                                   "name": "Bonding in Complexes",
+                                   "aliases": [
+                                          "valence bond theory",
+                                          "crystal field theory",
+                                          "CFT",
+                                          "spectrochemical series",
+                                          "CFSE",
+                                          "high spin",
+                                          "low spin"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_015_05",
+                                   "name": "Applications",
+                                   "aliases": [
+                                          "hardness of water",
+                                          "extraction of metals",
+                                          "biological importance of coordination compounds"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "jee_chem_014"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "hard"
+              },
+              {
+                     "id": "jee_chem_016",
+                     "name": "Metallurgy",
+                     "parent_unit": "Inorganic Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "General Principles of Metallurgy",
+                            "Extraction of Metals",
+                            "Isolation of Elements"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_016_01",
+                                   "name": "Concentration of Ores",
+                                   "aliases": [
+                                          "gravity separation",
+                                          "magnetic separation",
+                                          "froth flotation",
+                                          "leaching"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_016_02",
+                                   "name": "Extraction Methods",
+                                   "aliases": [
+                                          "calcination",
+                                          "roasting",
+                                          "smelting",
+                                          "reduction",
+                                          "thermite process",
+                                          "electrolytic reduction"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_016_03",
+                                   "name": "Refining",
+                                   "aliases": [
+                                          "distillation",
+                                          "liquation",
+                                          "electrolytic refining",
+                                          "zone refining",
+                                          "vapour phase refining"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_016_04",
+                                   "name": "Ellingham Diagram",
+                                   "aliases": [
+                                          "Ellingham diagram",
+                                          "thermodynamics of metallurgy"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            4
+                     ],
+                     "difficulty_tier": "easy"
+              },
+              {
+                     "id": "jee_chem_017",
+                     "name": "Organic Chemistry — Basic Principles",
+                     "parent_unit": "Organic Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "GOC",
+                            "General Organic Chemistry",
+                            "IUPAC Nomenclature",
+                            "Isomerism",
+                            "Reaction Mechanisms"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_017_01",
+                                   "name": "IUPAC Nomenclature",
+                                   "aliases": [
+                                          "naming organic compounds",
+                                          "prefix",
+                                          "suffix",
+                                          "word root",
+                                          "substituent"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_017_02",
+                                   "name": "Isomerism",
+                                   "aliases": [
+                                          "structural isomerism",
+                                          "chain isomerism",
+                                          "position isomerism",
+                                          "functional group isomerism",
+                                          "stereoisomerism",
+                                          "geometrical isomerism",
+                                          "optical isomerism",
+                                          "chirality",
+                                          "enantiomers",
+                                          "diastereomers",
+                                          "R/S configuration",
+                                          "E/Z notation"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_017_03",
+                                   "name": "Electronic Effects",
+                                   "aliases": [
+                                          "inductive effect",
+                                          "resonance effect",
+                                          "mesomeric effect",
+                                          "hyperconjugation",
+                                          "electromeric effect"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_017_04",
+                                   "name": "Reaction Intermediates",
+                                   "aliases": [
+                                          "carbocation",
+                                          "carbanion",
+                                          "free radical",
+                                          "carbene",
+                                          "nitrene",
+                                          "stability of intermediates"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_017_05",
+                                   "name": "Reaction Mechanisms",
+                                   "aliases": [
+                                          "SN1",
+                                          "SN2",
+                                          "E1",
+                                          "E2",
+                                          "electrophilic addition",
+                                          "nucleophilic substitution",
+                                          "elimination reaction"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_017_06",
+                                   "name": "Acidity and Basicity",
+                                   "aliases": [
+                                          "acid strength",
+                                          "base strength",
+                                          "pKa",
+                                          "factors affecting acidity"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            16
+                     ],
+                     "difficulty_tier": "hard"
+              },
+              {
+                     "id": "jee_chem_018",
+                     "name": "Hydrocarbons",
+                     "parent_unit": "Organic Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Alkanes",
+                            "Alkenes",
+                            "Alkynes",
+                            "Aromatic Hydrocarbons",
+                            "Benzene"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_018_01",
+                                   "name": "Alkanes",
+                                   "aliases": [
+                                          "methane",
+                                          "paraffins",
+                                          "free radical halogenation",
+                                          "combustion",
+                                          "conformations"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_018_02",
+                                   "name": "Alkenes",
+                                   "aliases": [
+                                          "ethylene",
+                                          "olefins",
+                                          "Markovnikov's rule",
+                                          "anti-Markovnikov",
+                                          "addition reactions",
+                                          "ozonolysis"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_018_03",
+                                   "name": "Alkynes",
+                                   "aliases": [
+                                          "acetylene",
+                                          "terminal alkyne",
+                                          "acidic hydrogen"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_018_04",
+                                   "name": "Aromatic Hydrocarbons",
+                                   "aliases": [
+                                          "benzene",
+                                          "aromaticity",
+                                          "Hückel's rule",
+                                          "electrophilic aromatic substitution",
+                                          "Friedel-Crafts",
+                                          "nitration",
+                                          "halogenation",
+                                          "sulfonation"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_018_05",
+                                   "name": "Directing Effects",
+                                   "aliases": [
+                                          "ortho-para director",
+                                          "meta director",
+                                          "activating group",
+                                          "deactivating group"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "jee_chem_017"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "jee_chem_019",
+                     "name": "Haloalkanes and Haloarenes",
+                     "parent_unit": "Organic Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Alkyl Halides",
+                            "Aryl Halides",
+                            "Organic Halogen Compounds"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_019_01",
+                                   "name": "Classification and Nomenclature",
+                                   "aliases": [
+                                          "primary halide",
+                                          "secondary halide",
+                                          "tertiary halide"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_019_02",
+                                   "name": "Nucleophilic Substitution",
+                                   "aliases": [
+                                          "SN1",
+                                          "SN2",
+                                          "Walden inversion",
+                                          "racemization"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_019_03",
+                                   "name": "Elimination Reactions",
+                                   "aliases": [
+                                          "E1",
+                                          "E2",
+                                          "Saytzeff rule",
+                                          "Hofmann elimination"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_019_04",
+                                   "name": "Haloarenes",
+                                   "aliases": [
+                                          "chlorobenzene",
+                                          "Dow process",
+                                          "Sandmeyer reaction",
+                                          "Fittig reaction",
+                                          "Wurtz-Fittig reaction"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "jee_chem_017",
+                            "jee_chem_020"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "jee_chem_020",
+                     "name": "Alcohols, Phenols and Ethers",
+                     "parent_unit": "Organic Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Alcohols",
+                            "Phenols",
+                            "Ethers",
+                            "Hydroxyl Compounds"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_020_01",
+                                   "name": "Alcohols",
+                                   "aliases": [
+                                          "methanol",
+                                          "ethanol",
+                                          "primary alcohol",
+                                          "secondary alcohol",
+                                          "tertiary alcohol",
+                                          "dehydration",
+                                          "Lucas test"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_020_02",
+                                   "name": "Phenols",
+                                   "aliases": [
+                                          "phenol",
+                                          "acidity of phenols",
+                                          "Kolbe reaction",
+                                          "Reimer-Tiemann reaction",
+                                          "Williamson synthesis"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_020_03",
+                                   "name": "Ethers",
+                                   "aliases": [
+                                          "diethyl ether",
+                                          "Williamson synthesis",
+                                          "electrophilic substitution of anisole"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "jee_chem_019",
+                            "jee_chem_021"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "jee_chem_021",
+                     "name": "Aldehydes, Ketones and Carboxylic Acids",
+                     "parent_unit": "Organic Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Carbonyl Compounds",
+                            "Aldehydes",
+                            "Ketones",
+                            "Carboxylic Acids"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_021_01",
+                                   "name": "Aldehydes and Ketones",
+                                   "aliases": [
+                                          "formaldehyde",
+                                          "acetaldehyde",
+                                          "acetone",
+                                          "nucleophilic addition",
+                                          "aldol condensation",
+                                          "Cannizzaro reaction",
+                                          "Wittig reaction"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_021_02",
+                                   "name": "Name Reactions",
+                                   "aliases": [
+                                          "Clemmensen reduction",
+                                          "Wolff-Kishner reduction",
+                                          "Tollens test",
+                                          "Fehling test",
+                                          "haloform reaction",
+                                          "cross aldol"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_021_03",
+                                   "name": "Carboxylic Acids",
+                                   "aliases": [
+                                          "acetic acid",
+                                          "formic acid",
+                                          "esterification",
+                                          "Hell-Volhard-Zelinsky",
+                                          "decarboxylation",
+                                          "acidity of carboxylic acids"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_021_04",
+                                   "name": "Acid Derivatives",
+                                   "aliases": [
+                                          "acid chloride",
+                                          "anhydride",
+                                          "ester",
+                                          "amide"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "jee_chem_020",
+                            "jee_chem_022"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            12
+                     ],
+                     "difficulty_tier": "hard"
+              },
+              {
+                     "id": "jee_chem_022",
+                     "name": "Amines",
+                     "parent_unit": "Organic Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Organic Nitrogen Compounds",
+                            "Primary Amine",
+                            "Secondary Amine",
+                            "Diazonium Salts"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_022_01",
+                                   "name": "Classification and Preparation",
+                                   "aliases": [
+                                          "primary amine",
+                                          "secondary amine",
+                                          "tertiary amine",
+                                          "Gabriel synthesis",
+                                          "Hofmann bromamide"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_022_02",
+                                   "name": "Basicity of Amines",
+                                   "aliases": [
+                                          "basic strength",
+                                          "pKb",
+                                          "aliphatic vs aromatic amines"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_022_03",
+                                   "name": "Diazonium Salts",
+                                   "aliases": [
+                                          "diazotization",
+                                          "Sandmeyer reaction",
+                                          "azo coupling",
+                                          "azo dyes"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [
+                            "jee_chem_021"
+                     ],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "jee_chem_023",
+                     "name": "Polymers",
+                     "parent_unit": "Organic Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Polymerization",
+                            "Addition Polymers",
+                            "Condensation Polymers",
+                            "Plastics",
+                            "Rubber"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_023_01",
+                                   "name": "Types of Polymerization",
+                                   "aliases": [
+                                          "addition polymerization",
+                                          "condensation polymerization",
+                                          "co-polymerization"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_023_02",
+                                   "name": "Important Polymers",
+                                   "aliases": [
+                                          "polyethylene",
+                                          "PVC",
+                                          "polystyrene",
+                                          "Teflon",
+                                          "nylon",
+                                          "Bakelite",
+                                          "polyester",
+                                          "rubber",
+                                          "Buna-S",
+                                          "Buna-N"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_023_03",
+                                   "name": "Biodegradable Polymers",
+                                   "aliases": [
+                                          "PHBV",
+                                          "nylon-2-nylon-6"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            4
+                     ],
+                     "difficulty_tier": "easy"
+              },
+              {
+                     "id": "jee_chem_024",
+                     "name": "Biomolecules",
+                     "parent_unit": "Organic Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Carbohydrates",
+                            "Proteins",
+                            "Nucleic Acids",
+                            "Vitamins"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_024_01",
+                                   "name": "Carbohydrates",
+                                   "aliases": [
+                                          "glucose",
+                                          "fructose",
+                                          "sucrose",
+                                          "starch",
+                                          "cellulose",
+                                          "monosaccharide",
+                                          "disaccharide",
+                                          "polysaccharide"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_024_02",
+                                   "name": "Proteins and Amino Acids",
+                                   "aliases": [
+                                          "amino acid",
+                                          "peptide bond",
+                                          "primary structure",
+                                          "secondary structure",
+                                          "denaturation",
+                                          "enzymes"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_024_03",
+                                   "name": "Nucleic Acids",
+                                   "aliases": [
+                                          "DNA",
+                                          "RNA",
+                                          "nucleotide",
+                                          "nucleoside",
+                                          "double helix"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_024_04",
+                                   "name": "Vitamins",
+                                   "aliases": [
+                                          "water-soluble vitamins",
+                                          "fat-soluble vitamins",
+                                          "deficiency diseases"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            4
+                     ],
+                     "difficulty_tier": "easy"
+              },
+              {
+                     "id": "jee_chem_025",
+                     "name": "Chemistry in Everyday Life",
+                     "parent_unit": "Organic Chemistry",
+                     "class": 12,
+                     "aliases": [
+                            "Drugs",
+                            "Medicines",
+                            "Soaps",
+                            "Detergents"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_025_01",
+                                   "name": "Drugs and Medicines",
+                                   "aliases": [
+                                          "analgesics",
+                                          "antipyretics",
+                                          "antibiotics",
+                                          "antacids",
+                                          "antihistamines",
+                                          "tranquilizers",
+                                          "antimicrobials"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_025_02",
+                                   "name": "Soaps and Detergents",
+                                   "aliases": [
+                                          "saponification",
+                                          "micelle",
+                                          "synthetic detergents",
+                                          "cleansing action"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_025_03",
+                                   "name": "Food Preservatives and Sweeteners",
+                                   "aliases": [
+                                          "artificial sweeteners",
+                                          "food preservatives",
+                                          "antioxidants"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            4
+                     ],
+                     "difficulty_tier": "easy"
+              },
+              {
+                     "id": "jee_chem_026",
+                     "name": "States of Matter",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Gaseous State",
+                            "Liquid State",
+                            "Ideal Gas",
+                            "Real Gas"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_026_01",
+                                   "name": "Gas Laws",
+                                   "aliases": [
+                                          "Boyle's law",
+                                          "Charles' law",
+                                          "Gay-Lussac's law",
+                                          "Avogadro's law",
+                                          "ideal gas equation",
+                                          "PV=nRT"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_026_02",
+                                   "name": "Kinetic Molecular Theory",
+                                   "aliases": [
+                                          "kinetic theory of gases",
+                                          "RMS speed",
+                                          "average speed",
+                                          "most probable speed",
+                                          "Maxwell-Boltzmann distribution"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_026_03",
+                                   "name": "Real Gases",
+                                   "aliases": [
+                                          "van der Waals equation",
+                                          "compressibility factor",
+                                          "critical constants",
+                                          "Boyle temperature",
+                                          "liquefaction"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_026_04",
+                                   "name": "Liquid State",
+                                   "aliases": [
+                                          "vapour pressure",
+                                          "surface tension",
+                                          "viscosity"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            8
+                     ],
+                     "difficulty_tier": "medium"
+              },
+              {
+                     "id": "jee_chem_027",
+                     "name": "Hydrogen",
+                     "parent_unit": "Inorganic Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Hydrogen Chemistry",
+                            "Water",
+                            "Hydrogen Peroxide",
+                            "Heavy Water"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_027_01",
+                                   "name": "Position of Hydrogen",
+                                   "aliases": [
+                                          "isotopes of hydrogen",
+                                          "protium",
+                                          "deuterium",
+                                          "tritium"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_027_02",
+                                   "name": "Water",
+                                   "aliases": [
+                                          "structure of water",
+                                          "hydrogen bonding in water",
+                                          "hard water",
+                                          "soft water"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_027_03",
+                                   "name": "Hydrogen Peroxide",
+                                   "aliases": [
+                                          "H₂O₂",
+                                          "structure of H₂O₂",
+                                          "oxidising agent",
+                                          "reducing agent"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            4
+                     ],
+                     "difficulty_tier": "easy"
+              },
+              {
+                     "id": "jee_chem_028",
+                     "name": "Environmental Chemistry",
+                     "parent_unit": "Physical Chemistry",
+                     "class": 11,
+                     "aliases": [
+                            "Pollution",
+                            "Green Chemistry",
+                            "Ozone Depletion"
+                     ],
+                     "subtopics": [
+                            {
+                                   "id": "jee_chem_028_01",
+                                   "name": "Air Pollution",
+                                   "aliases": [
+                                          "smog",
+                                          "acid rain",
+                                          "ozone depletion",
+                                          "greenhouse effect",
+                                          "global warming"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_028_02",
+                                   "name": "Water Pollution",
+                                   "aliases": [
+                                          "BOD",
+                                          "COD",
+                                          "eutrophication"
+                                   ]
+                            },
+                            {
+                                   "id": "jee_chem_028_03",
+                                   "name": "Green Chemistry",
+                                   "aliases": [
+                                          "sustainable chemistry",
+                                          "atom economy"
+                                   ]
+                            }
+                     ],
+                     "related_chapters": [],
+                     "typical_marks_range": [
+                            4,
+                            4
+                     ],
+                     "difficulty_tier": "easy"
+              }
+       ]
+}
