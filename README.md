@@ -1,359 +1,225 @@
-<p align="center">
-  <h1 align="center">🎯 reSolve — Exam Prioritisation Engine</h1>
-  <p align="center">
-    <em>An AI-powered tool that analyses exam papers, classifies questions by syllabus topic, and generates priority-ranked study plans.</em>
-  </p>
-  <p align="center">
-    <img src="https://img.shields.io/badge/python-3.10+-blue.svg" alt="Python 3.10+">
-    <img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License: MIT">
-    <img src="https://img.shields.io/badge/AI-Gemini%20%7C%20Embeddings-orange.svg" alt="AI Powered">
-    <img src="https://img.shields.io/badge/exams-JEE%20%7C%20NEET%20%7C%20CBSE-purple.svg" alt="Supported Exams">
-  </p>
-</p>
+<div align="center">
+
+# reSOLVE
+
+**Learn deeply. Score naturally.**
+
+An AI-powered education assistant that builds conceptual mastery — not content overload.
+
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org)
+[![Gemini](https://img.shields.io/badge/Google_Gemini-2.5_Flash-4285F4?logo=google)](https://ai.google.dev)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb)](https://mongodb.com)
+[![Clerk](https://img.shields.io/badge/Clerk-Auth-6C47FF?logo=clerk)](https://clerk.com)
+
+</div>
 
 ---
 
-## 📖 What is reSolve?
+## The Problem
 
-**reSolve** is a full-stack exam analytics pipeline designed for Indian competitive exam preparation. It takes a raw exam paper PDF, processes it through an intelligent pipeline, and tells you **which syllabus topics are tested most frequently** — so you can prioritise your study time effectively.
+Most students resort to **shallow learning** instead of conceptual understanding. Present solutions focus on content coverage rather than depth of understanding — flooding students with material without ensuring they truly grasp the fundamentals.
 
-### The Problem
+**reSOLVE fixes this.** We don't teach content. We build understanding — so exams become a natural side-effect of deep learning, not the goal themselves.
 
-Students preparing for exams like **JEE Main**, **NEET**, and **CBSE** boards often study all topics equally. But exam papers don't test all topics equally — some chapters appear in **every paper**, while others appear rarely. Without data, students waste time on low-frequency topics.
+## Philosophy
 
-### The Solution
+| Principle | What It Means |
+|---|---|
+| **Depth Over Volume** | Focuses on conceptual mastery instead of flooding students with content |
+| **Active Diagnosis** | Replaces passive watching with data-driven analysis to target learning gaps |
+| **Concepts Over Cramming** | Shifts focus from rote memorization to building strong intuitive foundations |
+| **Empowered Independence** | We don't build platform addiction — we build foundational strength students need to eventually succeed without us |
 
-reSolve automates what a teacher does manually:
-1. **Extracts** text from past exam papers (PDF → text)
-2. **Segments** the text into individual questions
-3. **Classifies** each question into syllabus topics using AI
-4. **Scores & Ranks** topics by frequency, recency, and marks weightage
-5. **Generates** a priority report: *"Focus on Electrostatics, Kinematics, and Organic Chemistry first"*
+## How It Works — The Learning Loop
+
+```
+┌──────────────┐     ┌──────────────┐     ┌──────────────┐
+│   DIAGNOSE   │────▶│    REVISE    │────▶│    CURATE    │
+│              │     │              │     │              │
+│ AI-generated │     │ Targeted     │     │ Gold-standard│
+│ precision    │     │ revision     │     │ first-       │
+│ tests reveal │     │ plans close  │     │ principle    │
+│ concept gaps │     │ those gaps   │     │ resources    │
+└──────┬───────┘     └──────────────┘     └──────┬───────┘
+       │                                         │
+       └─────────── REPEAT ◀─────────────────────┘
+```
+
+Tests reveal gaps → Gaps drive revision → Revision uses curated resources → Repeat.
+
+## Key Features
+
+### 🎯 Precision Testing
+AI-generated assessments that adapt to your weaknesses. Every wrong answer is diagnosed — questions aren't random, they target historically common conceptual misunderstandings.
+
+### 📚 Gold Standard Curation
+Powered by Google Search grounding — automatically filters and maps the most intuitive, high-quality resources from Khan Academy, MIT OCW, 3Blue1Brown, and more.
+
+### 📊 Live Progress Tracking
+Real-time score trends, concept strength radar charts, and weakness analysis — all stored persistently so you can see exactly how your understanding evolves.
+
+### ⏱️ Timed Tests with Buzzer Alerts
+Configurable time limits (5–30 min or unlimited), countdown display with color-coded urgency, and Web Audio API buzzer warnings at 50%, 25%, and 10% remaining.
+
+### 🔢 Math Rendering
+Full LaTeX support via KaTeX for inline (`$...$`) and display (`$$...$$`) math — fractions, integrals, Greek letters, and more render beautifully in questions and explanations.
+
+### 🔄 Adaptive Learning
+The more you use reSOLVE, the smarter it gets. Your concept mastery data feeds back into test generation, creating increasingly targeted assessments.
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
-                     ┌─────────────────────────────────────────────┐
-                     │               reSolve Pipeline              │
-                     └─────────────────────────────────────────────┘
-                                        │
-          ┌─────────────┬───────────────┼───────────────┬──────────────┐
-          ▼             ▼               ▼               ▼              ▼
-    ┌───────────┐ ┌───────────┐ ┌─────────────┐ ┌───────────┐ ┌────────────┐
-    │ Extraction│ │Segmentation│ │Classification│ │  Scoring  │ │  Reporting │
-    │  (PDF→Txt)│ │(Txt→Q's)  │ │ (Q→Topics)  │ │(Topics→  │ │ (Scores→   │
-    │           │ │           │ │             │ │  Scores)  │ │   Report)  │
-    └───────────┘ └───────────┘ └─────────────┘ └───────────┘ └────────────┘
-         │             │               │               │              │
-    pdfplumber     Regex NLP      Gemini API /     Weighted       JSON / 
-    pytesseract                  Sentence-BERT     Scoring       Console
+┌─────────────────────────────────────────────────────────────┐
+│                        FRONTEND                             │
+│                     Next.js 16 (App Router)                 │
+│                                                             │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌────────────┐  │
+│  │ Landing  │  │  Tests   │  │Resources │  │  Progress  │  │
+│  │  Page    │  │  Flow    │  │  Page    │  │  Section   │  │
+│  └──────────┘  └────┬─────┘  └────┬─────┘  └─────┬──────┘  │
+│                     │             │               │         │
+├─────────────────────┼─────────────┼───────────────┼─────────┤
+│                 API ROUTES (Server-side)                     │
+│                                                             │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌────────────┐  │
+│  │/api/     │  │/api/     │  │/api/     │  │/api/       │  │
+│  │generator │  │evaluator │  │curator   │  │progress    │  │
+│  └────┬─────┘  └────┬─────┘  └────┬─────┘  └─────┬──────┘  │
+│       │             │             │               │         │
+├───────┼─────────────┼─────────────┼───────────────┼─────────┤
+│       ▼             ▼             ▼               ▼         │
+│  ┌─────────────────────┐   ┌───────────────────────────┐    │
+│  │   Google Gemini     │   │      MongoDB Atlas        │    │
+│  │   2.5 Flash         │   │  ┌─────────────────────┐  │    │
+│  │                     │   │  │  TestResult          │  │    │
+│  │  • Test generation  │   │  │  ConceptMastery      │  │    │
+│  │  • Resource curation│   │  └─────────────────────┘  │    │
+│  │  • Google Search    │   │                           │    │
+│  └─────────────────────┘   └───────────────────────────┘    │
+│                                                             │
+│  ┌─────────────────────┐                                    │
+│  │   Clerk Auth        │                                    │
+│  │   User management   │                                    │
+│  └─────────────────────┘                                    │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-### Module Breakdown
-
-| Module | Purpose | Technology |
-|--------|---------|------------|
-| **Extraction** | Converts PDF exam papers to plain text | `pdfplumber` (digital PDFs), `pytesseract` + OCR (scanned PDFs) |
-| **Segmentation** | Splits raw text into individual questions | Regex pattern matching with configurable question formats |
-| **Classification** | Maps each question to syllabus topics | Google Gemini API (LLM) or `sentence-transformers` (local embeddings) |
-| **Scoring** | Calculates priority scores per topic | Weighted formula: frequency × recency × marks |
-| **Database** | Stores papers, questions, and classifications | SQLAlchemy + SQLite |
-| **Syllabus KB** | Curated knowledge base of exam topics | JSON files with chapters, topics, aliases, and weightages |
-
----
-
-## 📂 Project Structure
+## Project Structure
 
 ```
-reSolve2/
-├── main.py                          # CLI entry point
-├── requirements.txt                 # Python dependencies
-├── .env.example                     # Environment variable template
-├── LICENSE                          # MIT License
-│
-├── prioritisation_engine/           # Core engine package
-│   ├── __init__.py
-│   ├── config.py                    # All configuration & settings
-│   │
-│   ├── extraction/                  # PDF → Text module
-│   │   ├── __init__.py
-│   │   └── extractor.py
-│   │
-│   ├── segmentation/                # Text → Questions module
-│   │   ├── __init__.py
-│   │   └── segmenter.py
-│   │
-│   ├── classification/              # Questions → Topics module
-│   │   ├── __init__.py
-│   │   └── classifier.py
-│   │
-│   ├── scoring/                     # Topics → Priority Scores module
-│   │   ├── __init__.py
-│   │   └── scorer.py
-│   │
-│   ├── database/                    # SQLite persistence layer
-│   │   ├── __init__.py
-│   │   └── models.py
-│   │
-│   └── syllabus_kb/                 # Syllabus Knowledge Base
-│       ├── __init__.py
-│       ├── jee_main/                # JEE Main syllabus
-│       │   ├── physics.json
-│       │   ├── chemistry.json
-│       │   └── maths.json
-│       ├── neet/                    # NEET syllabus
-│       │   ├── physics.json
-│       │   ├── chemistry.json
-│       │   └── biology.json
-│       └── cbse/                    # CBSE 12th syllabus
-│           ├── physics.json
-│           ├── chemistry.json
-│           ├── maths.json
-│           └── biology.json
-│
-└── data/                            # Runtime data (gitignored)
-    ├── output/                      # Pipeline output files
-    └── prioritisation.db            # SQLite database
+resolve2/
+├── front-end/                    # Next.js application
+│   ├── app/
+│   │   ├── page.tsx              # Landing page
+│   │   ├── layout.tsx            # Root layout (Clerk, themes)
+│   │   ├── tests/
+│   │   │   ├── page.tsx          # Test configuration (topic, questions, timer)
+│   │   │   ├── take/page.tsx     # Test-taking interface with timer
+│   │   │   └── results/page.tsx  # Results & weakness analysis
+│   │   ├── resources/page.tsx    # AI-curated resource discovery
+│   │   ├── revise/               # Revision tools
+│   │   ├── prioritization/       # Study schedule optimization
+│   │   └── api/
+│   │       ├── generator/        # Gemini → generates diagnostic tests
+│   │       ├── evaluator/        # Processes wrong answers → concept mastery
+│   │       ├── curator/          # Gemini + Google Search → curated resources
+│   │       └── progress/         # MongoDB CRUD for test results
+│   ├── components/
+│   │   ├── StudyHero.tsx         # Landing page hero section
+│   │   ├── ProgressSection.tsx   # Charts, insights, progress tracking
+│   │   ├── MathText.tsx          # KaTeX LaTeX renderer
+│   │   ├── navbar.tsx            # Navigation with Clerk auth
+│   │   ├── FloatingMenu.tsx      # Quick-access floating menu
+│   │   └── Dither.jsx            # Animated background effect
+│   └── lib/
+│       ├── mongodb.ts            # MongoDB connection (cached for serverless)
+│       ├── models.ts             # Mongoose schemas (TestResult, ConceptMastery)
+│       └── questions.ts          # TypeScript types for test data
+├── backend/                      # Express.js backend (legacy)
+└── Resolve_amd/main.py           # Python AI engine
 ```
 
----
+## Tech Stack
 
-## 🚀 Quick Start
+| Layer | Technology |
+|---|---|
+| **Framework** | Next.js 16 (App Router, Turbopack) |
+| **Language** | TypeScript |
+| **AI** | Google Gemini 2.5 Flash |
+| **Database** | MongoDB Atlas (Mongoose ODM) |
+| **Auth** | Clerk |
+| **Styling** | Tailwind CSS, Framer Motion |
+| **Math** | KaTeX |
+| **Charts** | Recharts |
+| **Package Manager** | Bun |
+
+## API Routes
+
+| Route | Method | Purpose |
+|---|---|---|
+| `/api/generator` | POST | Generates adaptive diagnostic tests using Gemini |
+| `/api/evaluator` | POST | Processes wrong answers, updates concept mastery in MongoDB |
+| `/api/curator` | POST | Curates learning resources via Gemini + Google Search grounding |
+| `/api/progress` | GET | Fetches test history and concept mastery for a user |
+| `/api/progress` | POST | Saves test results to MongoDB |
+
+## Getting Started
 
 ### Prerequisites
 
-- **Python 3.10+**
-- **Tesseract OCR** (only needed for scanned PDFs) — [Install Guide](https://github.com/tesseract-ocr/tesseract)
-- A **Google Gemini API key** (free tier works) — [Get one here](https://aistudio.google.com/apikey)
+- [Node.js](https://nodejs.org) 18+ or [Bun](https://bun.sh)
+- [MongoDB Atlas](https://mongodb.com/atlas) account
+- [Google AI Studio](https://aistudio.google.com) API key
+- [Clerk](https://clerk.com) account
 
-### 1. Clone & Setup
+### Installation
 
 ```bash
-git clone https://github.com/Kprakash78/Resolve_amd.git
-cd Resolve_amd
-
-# Create virtual environment
-python -m venv venv
-
-# Activate it
-# Windows:
-venv\Scripts\activate
-# Linux/Mac:
-source venv/bin/activate
+# Clone the repository
+git clone https://github.com/SshauryaaRocks19/resolve2.git
+cd resolve2/front-end
 
 # Install dependencies
-pip install -r requirements.txt
+bun install
+
+# Configure environment
+cp .env.example .env.local
 ```
 
-### 2. Configure API Key
+### Environment Variables
+
+```env
+GEMINI_API_KEY=your_gemini_api_key
+MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/resolve2
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_...
+CLERK_SECRET_KEY=sk_test_...
+```
+
+### Run
 
 ```bash
-# Copy the template
-cp .env.example .env
-
-# Edit .env and add your API key
-# LLM_API_KEY=your_google_api_key_here
+bun run dev
 ```
 
-> **Note:** The embedding strategy (`--strategy embedding`) works **completely offline** with no API key needed.
+Open [http://localhost:3000](http://localhost:3000).
 
-### 3. Initialise Database
+## Data Models
 
-```bash
-python main.py init-db
-```
+### TestResult
+Stores each completed test — score, total questions, topic, and identified weaknesses.
 
-This creates a SQLite database and seeds it with the syllabus knowledge base (topics from JEE Main, NEET, and CBSE).
-
-### 4. Run the Pipeline
-
-```bash
-# Step 1: Extract text from PDF
-python main.py extract your_paper.pdf -o data/output/extracted.txt
-
-# Step 2: Segment into questions
-python main.py segment data/output/extracted.txt -e jee_main -o data/output/segmented.json
-
-# Step 3: Classify questions into topics
-# Using local embeddings (free, no API key needed):
-python main.py classify data/output/segmented.json -e jee_main -s physics --strategy embedding -o data/output/classified.json
-
-# Using Google Gemini (more accurate, needs API key):
-python main.py classify data/output/segmented.json -e jee_main -s physics --strategy llm -o data/output/classified.json
-
-# Step 4: Generate priority report
-python main.py report data/output/classified.json -o data/output/report.json
-```
+### ConceptMastery
+Tracks per-concept weakness over time. Each wrong answer increments the `error_weight` for that micro-concept, which feeds back into future test generation for targeted assessment.
 
 ---
 
-## 🧠 Classification Strategies
+<div align="center">
 
-reSolve offers two classification approaches:
+**reSOLVE** — Because understanding is the shortcut.
 
-### 1. LLM-Based (Recommended for accuracy)
+Built with ❤️
 
-Uses Google Gemini API to classify questions with high confidence (80-95%).
-
-```bash
-python main.py classify segmented.json -e jee_main -s physics --strategy llm
-```
-
-| Pros | Cons |
-|------|------|
-| High accuracy (80-95% confidence) | Requires API key |
-| Understands context and nuance | Rate limited on free tier (15 RPM) |
-| Multi-topic detection | Needs internet connection |
-
-### 2. Embedding-Based (Recommended for offline/bulk use)
-
-Uses `sentence-transformers` (all-MiniLM-L6-v2) locally with cosine similarity.
-
-```bash
-python main.py classify segmented.json -e jee_main -s physics --strategy embedding
-```
-
-| Pros | Cons |
-|------|------|
-| Completely free & offline | Lower confidence scores (15-50%) |
-| No rate limits | Less context-aware |
-| Fast batch processing | Single-topic matching |
-
----
-
-## 📚 Supported Exams & Syllabi
-
-The syllabus knowledge base includes comprehensive topic coverage:
-
-| Exam | Subjects | Chapters | Topics | Aliases |
-|------|----------|----------|--------|---------|
-| **JEE Main** | Physics, Chemistry, Maths | 60+ | 400+ | 2000+ |
-| **NEET** | Physics, Chemistry, Biology | 60+ | 400+ | 2000+ |
-| **CBSE 12th** | Physics, Chemistry, Maths, Biology | 65+ | 450+ | 2200+ |
-
-Each syllabus JSON contains:
-- **Chapter names** and IDs
-- **Sub-topics** within each chapter
-- **Keyword aliases** for better matching (e.g., "SHM" → "Oscillations")
-- **Weightages** based on historical exam data
-- **Key formulas** and concepts
-
----
-
-## ⚙️ Configuration
-
-All settings are in `prioritisation_engine/config.py`:
-
-```python
-# LLM Settings (auto-loaded from .env)
-LLM_PROVIDER = "google"         # "google", "openai", or "huggingface"
-LLM_MODEL = "gemini-2.0-flash"  # Model name
-LLM_API_KEY = ""                # From .env file
-
-# Scoring Weights
-SCORING_WEIGHTS = {
-    "frequency": 0.40,           # How often a topic appears
-    "recency": 0.30,             # Recent papers weighted more
-    "marks": 0.30,               # Higher-mark questions weighted more
-}
-
-# Classification Threshold
-CLASSIFICATION_CONFIDENCE_THRESHOLD = 0.60  # For LLM strategy
-# Embedding strategy uses its own threshold of 0.25
-```
-
----
-
-## 📊 CLI Reference
-
-```
-usage: main.py [-h] {init-db,extract,segment,classify,report,syllabus} ...
-
-reSolve — Exam Prioritisation Engine
-
-Commands:
-  init-db     Initialise the database and seed syllabus topics
-  extract     Extract text from a PDF exam paper
-  segment     Segment extracted text into individual questions
-  classify    Classify questions into syllabus topics
-  report      Generate a priority report from classifications
-  syllabus    Browse the syllabus knowledge base
-```
-
-### Command Examples
-
-```bash
-# View syllabus topics
-python main.py syllabus --exam jee_main --subject physics
-
-# Extract with OCR fallback for scanned PDFs
-python main.py extract scanned_paper.pdf --ocr -o output.txt
-
-# Classify for chemistry
-python main.py classify segmented.json -e neet -s chemistry --strategy embedding -o chem.json
-```
-
----
-
-## 🔧 Tech Stack
-
-| Component | Technology | Purpose |
-|-----------|------------|---------|
-| **Language** | Python 3.10+ | Core language |
-| **PDF Parsing** | pdfplumber | Digital PDF text extraction |
-| **OCR** | pytesseract + Pillow | Scanned PDF text extraction |
-| **NLP** | spaCy | Text processing |
-| **Embeddings** | sentence-transformers | Local AI classification |
-| **LLM** | Google Gemini API | Cloud AI classification |
-| **Database** | SQLAlchemy + SQLite | Data persistence |
-| **ML** | scikit-learn, PyTorch | Similarity computation |
-| **Config** | python-dotenv | Environment management |
-
----
-
-## 🗺️ Roadmap
-
-- [x] PDF text extraction (digital + OCR)
-- [x] Question segmentation with regex patterns
-- [x] LLM-based topic classification (Gemini)
-- [x] Embedding-based topic classification (offline)
-- [x] Syllabus knowledge base (JEE, NEET, CBSE)
-- [x] SQLite database with topic seeding
-- [ ] Priority scoring and weighted reports
-- [ ] Web dashboard for visual analytics
-- [ ] Multi-paper trend analysis
-- [ ] PDF export of priority reports
-- [ ] Support for state board exams
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Here's how:
-
-1. **Fork** the repository
-2. **Create** a feature branch: `git checkout -b feature/my-feature`
-3. **Commit** your changes: `git commit -m "Add my feature"`
-4. **Push** to the branch: `git push origin feature/my-feature`
-5. **Open** a Pull Request
-
-### Areas for Contribution
-
-- Adding syllabus KBs for more exams (state boards, KVPY, Olympiads)
-- Improving segmentation patterns for different paper formats
-- Building a web UI dashboard
-- Adding more LLM provider integrations
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
----
-
-<p align="center">
-  <strong>Built with ❤️ for students who want to study smarter, not harder.</strong>
-</p>
+</div>
