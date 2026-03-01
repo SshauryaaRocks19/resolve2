@@ -19,7 +19,7 @@ export async function POST(request: Request) {
 
     try {
         const response = await genAI.models.generateContent({
-            model: 'gemini-2.5-flash',
+            model: 'gemini-2.5-flash-lite',
             contents: `Find conceptual resources for: ${topic}`,
             config: {
                 systemInstruction: systemPrompt,
