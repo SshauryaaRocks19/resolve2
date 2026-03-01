@@ -18,8 +18,8 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 
-// --- MOCK DATA BASED ON SYLLABUS ---
-const PRIORITY_TOPICS = [
+// --- DEFAULT FALLBACK DATA ---
+const DEFAULT_PRIORITY_TOPICS = [
     {
         unit: "Unit 2: Derivatives",
         topics: [
@@ -37,7 +37,7 @@ const PRIORITY_TOPICS = [
     }
 ];
 
-const FLASHCARDS = [
+const DEFAULT_FLASHCARDS = [
     {
         front: "What is the geometric interpretation of the Gradient Vector ∇f at a point?",
         back: "It points in the direction of steepest ascent. Its magnitude |∇f| is the rate of increase in that direction. It is normal to the level curve/surface."
@@ -60,7 +60,7 @@ const FLASHCARDS = [
     }
 ];
 
-const REVISION_STRATEGY = [
+const DEFAULT_REVISION_STRATEGY = [
     {
         title: "Active Recall Protocol",
         desc: "Don't just re-read notes. Close your eyes and attempt to derive the Jacobian for spherical coordinates from scratch. If you fail, peek, then try again in 10 minutes."
@@ -76,6 +76,24 @@ const REVISION_STRATEGY = [
 ];
 
 export default function RevisionResultsPage() {
+    const [priorityTopics, setPriorityTopics] = useState(DEFAULT_PRIORITY_TOPICS);
+    const [flashcards, setFlashcards] = useState(DEFAULT_FLASHCARDS);
+    const [revisionStrategy, setRevisionStrategy] = useState(DEFAULT_REVISION_STRATEGY);
+
+    useEffect(() => {
+        const stored = sessionStorage.getItem('revisionData');
+        if (stored) {
+            try {
+                const data = JSON.parse(stored);
+                if (data.priority_topics?.length) setPriorityTopics(data.priority_topics);
+                if (data.flashcards?.length) setFlashcards(data.flashcards);
+                if (data.revision_strategy?.length) setRevisionStrategy(data.revision_strategy);
+            } catch (e) {
+                console.error('Failed to parse revision data:', e);
+            }
+        }
+    }, []);
+
     return (
         <div className="min-h-screen bg-white dark:bg-[#020617] text-black dark:text-white transition-colors duration-500 font-serif pb-24">
 
@@ -132,19 +150,19 @@ export default function RevisionResultsPage() {
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8">
-                        {PRIORITY_TOPICS.map((unit, i) => (
+                        {priorityTopics.map((unit: any, i: number) => (
                             <div key={i} className="space-y-6">
                                 <h3 className="font-sans text-sm font-bold uppercase tracking-widest opacity-50 border-b border-black/10 dark:border-white/10 pb-2">
                                     {unit.unit}
                                 </h3>
                                 <div className="space-y-4">
-                                    {unit.topics.map((topic, j) => (
+                                    {unit.topics.map((topic: any, j: number) => (
                                         <div key={j} className="bg-white/50 dark:bg-white/5 border border-black/5 dark:border-white/5 p-4 rounded-xl">
                                             <div className="flex justify-between items-start mb-2">
                                                 <h4 className="font-bold text-lg">{topic.name}</h4>
                                                 <span className={`text-[10px] font-sans font-bold uppercase tracking-widest px-2 py-1 rounded-full border ${topic.gap === 'Critical' ? 'bg-red-500/10 text-red-500 border-red-500/20' :
-                                                        topic.gap === 'High' ? 'bg-orange-500/10 text-orange-500 border-orange-500/20' :
-                                                            'bg-yellow-500/10 text-yellow-500 border-yellow-500/20'
+                                                    topic.gap === 'High' ? 'bg-orange-500/10 text-orange-500 border-orange-500/20' :
+                                                        'bg-yellow-500/10 text-yellow-500 border-yellow-500/20'
                                                     }`}>
                                                     {topic.gap} Gap
                                                 </span>
@@ -170,7 +188,7 @@ export default function RevisionResultsPage() {
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-6">
-                        {REVISION_STRATEGY.map((strat, i) => (
+                        {revisionStrategy.map((strat: any, i: number) => (
                             <div key={i} className="bg-purple-50/50 dark:bg-purple-900/10 p-6 rounded-2xl border border-purple-100 dark:border-purple-500/20">
                                 <h3 className="font-bold text-lg mb-3 text-purple-900 dark:text-purple-300">{strat.title}</h3>
                                 <p className="text-sm leading-relaxed opacity-80 font-sans">
@@ -191,13 +209,13 @@ export default function RevisionResultsPage() {
                             <h2 className="text-3xl font-bold">Concept Deck</h2>
                         </div>
                         <span className="font-sans text-xs font-bold uppercase tracking-widest opacity-40">
-                            {FLASHCARDS.length} Cards
+                            {flashcards.length} Cards
                         </span>
                     </div>
 
                     {/* Horizontal Scroll Deck */}
                     <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory -mx-6 px-6 scrollbar-hide">
-                        {FLASHCARDS.map((card, i) => (
+                        {flashcards.map((card: any, i: number) => (
                             <div key={i} className="snap-center shrink-0 w-[350px] md:w-[400px]">
                                 <FlashcardItem card={card} index={i} />
                             </div>

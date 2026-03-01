@@ -36,15 +36,34 @@ export default function RevisePage() {
     };
 
     const handleAnalyze = async () => {
-        if (!topic || !weakness || !file) return;
+        if (!topic || !weakness) return;
         setLoading(true);
         setError(null);
         try {
-            await new Promise(resolve => setTimeout(resolve, 2000));
+            const formData = new FormData();
+            formData.append('topic', topic);
+            formData.append('weakness', weakness);
+            if (file) {
+                formData.append('file', file);
+            }
+
+            const response = await fetch('http://localhost:8000/revision-tool', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`Failed: ${errorText}`);
+            }
+
+            const data = await response.json();
+            // Store in sessionStorage so results page can read it
+            sessionStorage.setItem('revisionData', JSON.stringify(data));
             router.push('/revise/results');
         } catch (err: any) {
             console.error(err);
-            setError('Failed to generate revision content.');
+            setError(err.message || 'Failed to generate revision content. Is the API server running?');
             setLoading(false);
         }
     };
@@ -166,7 +185,7 @@ export default function RevisePage() {
 
                     <Button
                         onClick={handleAnalyze}
-                        disabled={loading || !topic || !weakness || !file}
+                        disabled={loading || !topic || !weakness}
                         className="w-full h-16 text-lg font-bold rounded-xl bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 transition-all hover:scale-[1.01] shadow-xl font-sans"
                     >
                         {loading ? (
