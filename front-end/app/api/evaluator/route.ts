@@ -1,50 +1,49 @@
-import { supabase } from '@/lib/supabase';
+import { connectDB } from '@/lib/mongodb';
+import { ConceptMastery } from '@/lib/models';
 import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
     try {
         const { userId, topic, wrongAnswers } = await request.json();
 
-        // 1. BYPASS GEMINI: Create a fake weakness string to save your API limits
-        const fakeWeakness = "TEST DATA: Fails to understand basic Supabase plumbing";
+        await connectDB();
 
-        console.log("Received wrong answers from frontend:", wrongAnswers);
-        console.log("Attempting to insert into Supabase...");
+        console.log("Received wrong answers from frontend:", wrongAnswers?.length || 0);
 
-        // 2. Talk directly to Supabase
-        const { data: existing, error: fetchError } = await supabase
-            .from('user_concept_mastery')
-            .select('id, error_weight')
-            .eq('user_id', userId)
-            .eq('micro_concept', fakeWeakness)
-            .single();
-
-        if (existing) {
-            // Update existing record
-            const { error: updateError } = await supabase
-                .from('user_concept_mastery')
-                .update({ error_weight: existing.error_weight + 2, last_tested_at: new Date() })
-                .eq('id', existing.id);
-
-            if (updateError) throw updateError;
-        } else {
-            // Insert new record
-            const { error: insertError } = await supabase
-                .from('user_concept_mastery')
-                .insert([{
-                    user_id: userId,
-                    topic: topic,
-                    micro_concept: fakeWeakness,
-                    error_weight: 3
-                }]);
-
-            if (insertError) throw insertError;
+        if (!wrongAnswers || wrongAnswers.length === 0) {
+            return NextResponse.json({ success: true, message: "No wrong answers to process" });
         }
 
-        return NextResponse.json({ success: true, message: "Test data successfully forced into Supabase!" });
 
-    } catch (error) {
-        console.error("Supabase Error:", error);
-        return NextResponse.json({ error: "Database connection failed" }, { status: 500 });
+        for (const wa of wrongAnswers) {
+            const weakness = wa.diagnosed_weakness || 'Unknown concept gap';
+
+            const existing = await ConceptMastery.findOne({
+                user_id: userId,
+                topic,
+                micro_concept: weakness,
+            });
+
+            if (existing) {
+                existing.error_weight += 2;
+                existing.last_tested_at = new Date();
+                await existing.save();
+                console.log(`Updated weakness: "${weakness}" → error_weight: ${existing.error_weight}`);
+            } else {
+                await ConceptMastery.create({
+                    user_id: userId,
+                    topic,
+                    micro_concept: weakness,
+                    error_weight: 3,
+                });
+                console.log(`Created new weakness: "${weakness}"`);
+            }
+        }
+
+        return NextResponse.json({ success: true, message: `Saved ${wrongAnswers.length} weakness(es) to MongoDB` });
+
+    } catch (error: any) {
+        console.error("MongoDB Error:", error);
+        return NextResponse.json({ error: error.message || "Database connection failed" }, { status: 500 });
     }
 }

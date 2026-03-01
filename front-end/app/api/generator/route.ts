@@ -1,68 +1,22 @@
-// import { GoogleGenAI, Type, Schema } from '@google/genai';
-import { supabase } from '@/lib/supabase';
+import { GoogleGenAI, Type, Schema } from '@google/genai';
+import { connectDB } from '@/lib/mongodb';
+import { ConceptMastery } from '@/lib/models';
 import { NextResponse } from 'next/server';
 
-// const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-
-// HARDCODED DUMMY QUESTIONS — Gemini call commented out to save API limits
-const DUMMY_QUESTIONS = [
-    {
-        diagnosed_weakness: "Confuses state functions with path functions when calculating system changes.",
-        question: "An ideal gas undergoes a cyclic process and returns to its exact initial state. Which of the following thermodynamic quantities must be exactly zero for the complete cycle?",
-        options: [
-            "The net heat transferred (Q)",
-            "The net work done (W)",
-            "The change in internal energy (ΔU)",
-            "The total entropy generated in the universe (ΔS_universe)"
-        ],
-        correct_index: 2,
-        conceptual_breakdown: "Internal energy (ΔU) is a state function. Because the system returned to its initial state, the change in internal energy MUST be zero, regardless of the path taken. Heat (Q) and Work (W) are path functions and will not be zero. The total entropy of the universe would only be zero if the cycle was perfectly reversible, which is never guaranteed."
-    },
-    {
-        diagnosed_weakness: "Fails to recognize that adiabatic processes do not automatically mean constant temperature.",
-        question: "A gas expands rapidly and adiabatically against a constant external pressure. What happens to the temperature of the gas?",
-        options: [
-            "It increases because the volume increases.",
-            "It remains constant because no heat (Q) is exchanged.",
-            "It decreases because the gas does work at the expense of its internal energy.",
-            "It cannot be determined without knowing the specific heat capacities."
-        ],
-        correct_index: 2,
-        conceptual_breakdown: "In an adiabatic process, heat transfer (Q) is zero. According to the First Law ($\\Delta U = Q - W$), if the gas expands, it does work on the surroundings (W is positive). Therefore, $\\Delta U$ must be negative. Since internal energy is directly proportional to temperature for an ideal gas, the temperature must drop. 'Adiabatic' means no heat transfer, not constant temperature!"
-    },
-    {
-        diagnosed_weakness: "Misunderstands the Second Law of Thermodynamics regarding the entropy of the system vs. the surroundings.",
-        question: "Water freezes into ice at -10°C. The entropy of the water (the system) decreases because the ice structure is more ordered. How does this process not violate the Second Law of Thermodynamics?",
-        options: [
-            "The Second Law only applies to gases, not phase changes of liquids.",
-            "The heat released by the freezing water increases the entropy of the surroundings by a greater amount.",
-            "The volume of the ice expands, which compensates for the loss of entropy.",
-            "At sub-zero temperatures, the entropy of a system is allowed to decrease naturally."
-        ],
-        correct_index: 1,
-        conceptual_breakdown: "The Second Law states that the entropy of the UNIVERSE (System + Surroundings) must increase for a spontaneous process. While the water's entropy decreases as it becomes ordered ice, the freezing process is exothermic. It releases latent heat into the -10°C surroundings, increasing the surroundings' entropy. This increase is larger than the system's decrease, resulting in a net positive $\\Delta S$ for the universe."
-    }
-];
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 export async function POST(request: Request) {
     try {
         const { userId, topic, level, syllabus, numQuestions = 10 } = await request.json();
-
-        console.log('Generator: Returning hardcoded dummy questions (AI bypassed)');
-        console.log('Request:', { userId, topic, level, syllabus, numQuestions });
-
-        // Return the dummy questions directly — no Gemini call
-        return NextResponse.json(DUMMY_QUESTIONS);
-
-        /* === ORIGINAL GEMINI CODE (uncomment when ready) ===
         const qCount = Math.min(Math.max(numQuestions, 3), 30);
 
-        const { data: weaknesses } = await supabase
-            .from('user_concept_mastery')
-            .select('micro_concept')
-            .eq('user_id', userId)
-            .eq('topic', topic)
-            .gt('error_weight', 0);
+        await connectDB();
+
+        const weaknesses = await ConceptMastery.find({
+            user_id: userId,
+            topic,
+            error_weight: { $gt: 0 },
+        }).lean();
 
         const mathInstruction = `
       MATH FORMATTING: If the topic involves mathematics, physics, or any scientific notation:
@@ -84,9 +38,9 @@ export async function POST(request: Request) {
       YOUR GOAL: Build a ${qCount}-question Broad-Spectrum Diagnostic Test.
       
       CRITICAL INSTRUCTIONS:
-      1. Span the Syllabus.
-      2. The "Classic Traps".
-      3. No Rote Trivia.
+      1. Span the Syllabus: Start Question 1 at the most fundamental basics. Gradually scale up so Question ${qCount} hits advanced topics.
+      2. The "Classic Traps": Design distractors around historically common conceptual misunderstandings.
+      3. No Rote Trivia: Every question must test a "why" or "how", not just a memorized formula.
       ${mathInstruction}
     `;
         } else {
@@ -100,6 +54,7 @@ export async function POST(request: Request) {
       
       CRITICAL INSTRUCTIONS:
       The student currently struggles with these exact concepts: ${weaknessString}.
+      Heavily target these specific weaknesses. Include plausible distractors that a student would choose if they have these exact misunderstandings.
       ${mathInstruction}
     `;
         }
@@ -110,18 +65,18 @@ export async function POST(request: Request) {
             items: {
                 type: Type.OBJECT,
                 properties: {
-                    diagnosed_weakness: { type: Type.STRING },
-                    question: { type: Type.STRING },
-                    options: { type: Type.ARRAY, items: { type: Type.STRING } },
+                    diagnosed_weakness: { type: Type.STRING, description: "The specific concept this question tests" },
+                    question: { type: Type.STRING, description: "The question text. Use LaTeX ($...$) for math." },
+                    options: { type: Type.ARRAY, items: { type: Type.STRING, description: "Option text. Use LaTeX for math." } },
                     correct_index: { type: Type.INTEGER },
-                    conceptual_breakdown: { type: Type.STRING }
+                    conceptual_breakdown: { type: Type.STRING, description: "Explanation of the correct answer. Use LaTeX for math." }
                 },
                 required: ["diagnosed_weakness", "question", "options", "correct_index", "conceptual_breakdown"]
             }
         };
 
         const response = await ai.models.generateContent({
-            model: 'gemini-2.5-flash-lite',
+            model: 'gemini-2.5-flash',
             contents: prompt,
             config: {
                 responseMimeType: "application/json",
@@ -131,7 +86,7 @@ export async function POST(request: Request) {
         });
 
         return NextResponse.json(JSON.parse(response.text!));
-        === END ORIGINAL GEMINI CODE === */
+
     } catch (error: any) {
         console.error('Generator API Error:', error);
         return NextResponse.json(
@@ -140,3 +95,11 @@ export async function POST(request: Request) {
         );
     }
 }
+
+/* === HARDCODED DUMMY QUESTIONS (swap return statement above to use these) ===
+const DUMMY_QUESTIONS = [
+    { diagnosed_weakness: "Confuses state vs path functions.", question: "Cyclic process: which quantity is zero?", options: ["Q", "W", "$\\Delta U$", "$\\Delta S_{univ}$"], correct_index: 2, conceptual_breakdown: "$\\Delta U$ is a state function." },
+    { diagnosed_weakness: "Adiabatic ≠ isothermal.", question: "Adiabatic expansion: temperature?", options: ["Increases", "Constant", "Decreases", "Indeterminate"], correct_index: 2, conceptual_breakdown: "$Q=0$, gas does work, $\\Delta U < 0$." },
+    { diagnosed_weakness: "System vs universe entropy.", question: "Water freezes: 2nd Law?", options: ["Only gases", "Surroundings entropy up", "Volume compensates", "Sub-zero allows"], correct_index: 1, conceptual_breakdown: "$\\Delta S_{univ} \\geq 0$." },
+];
+=== END HARDCODED === */

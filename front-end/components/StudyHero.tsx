@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { Filter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -15,6 +16,8 @@ import {
 } from '@/components/ui/dropdown-menu';
 
 export default function StudyHero() {
+    const [topic, setTopic] = useState('');
+
     return (
         <section className="relative flex min-h-[70vh] w-full flex-col items-center justify-center overflow-hidden bg-white dark:bg-[#020617] px-4 py-20 text-center transition-colors duration-500">
             {/* Dynamic Background */}
@@ -49,16 +52,27 @@ export default function StudyHero() {
                         <div className="relative flex h-16 w-full items-center rounded-full border border-black/10 dark:border-white/10 bg-white/80 dark:bg-white/5 px-2 backdrop-blur-md transition-all focus-within:bg-white dark:focus-within:bg-white/10 focus-within:shadow-lg dark:focus-within:shadow-none hover:bg-white/90 dark:hover:bg-white/10">
                             <input
                                 type="text"
+                                value={topic}
+                                onChange={(e) => setTopic(e.target.value)}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' && topic.trim()) {
+                                        window.location.href = `/resources?topic=${encodeURIComponent(topic.trim())}`;
+                                    }
+                                }}
                                 placeholder="Enter topic name."
                                 className="flex-1 bg-transparent px-6 text-lg text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-white/40 focus:outline-none font-light tracking-wide"
                             />
-                            <Link href="/resources">
-                                <Button
-                                    className="h-12 w-24 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-white dark:text-black dark:hover:bg-gray-100 shadow-md transition-all hover:scale-105 font-sans"
-                                >
-                                    Go!
-                                </Button>
-                            </Link>
+                            <Button
+                                onClick={() => {
+                                    if (topic.trim()) {
+                                        window.location.href = `/resources?topic=${encodeURIComponent(topic.trim())}`;
+                                    }
+                                }}
+                                disabled={!topic.trim()}
+                                className="h-12 w-24 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 dark:bg-white dark:text-black dark:hover:bg-gray-100 shadow-md transition-all hover:scale-105 font-sans"
+                            >
+                                Go!
+                            </Button>
                         </div>
                     </div>
 

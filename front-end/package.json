@@ -23,6 +23,7 @@
     "gsap": "^3.13.0",
     "katex": "^0.16.33",
     "lucide-react": "^0.562.0",
+    "mongoose": "^9.2.3",
     "next": "16.1.1",
     "next-themes": "^0.4.6",
     "postprocessing": "^6.36.0",

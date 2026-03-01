@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, BookOpen, ExternalLink, Search, Loader2, Video, Globe, Sparkles, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 
 interface Resource {
@@ -14,16 +15,16 @@ interface Resource {
 }
 
 export default function ResourcesPage() {
-    const [topic, setTopic] = useState('');
+    const searchParams = useSearchParams();
+    const initialTopic = searchParams.get('topic') || '';
+    const [topic, setTopic] = useState(initialTopic);
     const [resources, setResources] = useState<Resource[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [searched, setSearched] = useState(false);
 
-    const handleSearch = async (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!topic.trim()) return;
-
+    const doSearch = useCallback(async (searchTopic: string) => {
+        if (!searchTopic.trim()) return;
         setLoading(true);
         setError(null);
         setSearched(true);
@@ -32,7 +33,7 @@ export default function ResourcesPage() {
             const res = await fetch('/api/curator', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ topic: topic.trim() }),
+                body: JSON.stringify({ topic: searchTopic.trim() }),
             });
 
             const data = await res.json();
@@ -41,8 +42,6 @@ export default function ResourcesPage() {
                 throw new Error(data.error || 'Failed to fetch resources');
             }
 
-            // The API returns { result: "<json string>" }
-            // Parse the result string as JSON
             let parsed: Resource[];
             if (typeof data.result === 'string') {
                 parsed = JSON.parse(data.result);
@@ -62,7 +61,22 @@ export default function ResourcesPage() {
         } finally {
             setLoading(false);
         }
+    }, []);
+
+    // Auto-search if topic came from URL
+    useEffect(() => {
+        if (initialTopic) {
+            doSearch(initialTopic);
+        }
+    }, [initialTopic, doSearch]);
+
+    const handleSearch = async (e: React.FormEvent) => {
+        e.preventDefault();
+        doSearch(topic);
     };
+
+
+
 
     return (
         <div className="min-h-screen w-full bg-white dark:bg-[#020617] text-black dark:text-white transition-colors duration-500 font-serif">
@@ -305,4 +319,4 @@ function ResourceCard({ resource }: { resource: Resource }) {
             </div>
         </div>
     );
-}
+}   

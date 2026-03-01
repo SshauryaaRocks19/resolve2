@@ -1,4 +1,5 @@
-import { supabase } from '@/lib/supabase';
+import { connectDB } from '@/lib/mongodb';
+import { TestResult, ConceptMastery } from '@/lib/models';
 import { NextResponse } from 'next/server';
 
 // POST: Save a test result
@@ -6,25 +7,21 @@ export async function POST(request: Request) {
     try {
         const { userId, topic, score, total, weaknesses } = await request.json();
 
-        const { error } = await supabase
-            .from('test_results')
-            .insert([{
-                user_id: userId,
-                topic,
-                score,
-                total,
-                weaknesses: weaknesses || [],
-            }]);
+        await connectDB();
 
-        if (error) {
-            console.error('Supabase insert error:', error);
-            return NextResponse.json({ success: false, error: error.message }, { status: 500 });
-        }
+        const result = await TestResult.create({
+            user_id: userId,
+            topic,
+            score,
+            total,
+            weaknesses: weaknesses || [],
+        });
 
+        console.log('Test result saved to MongoDB:', result._id);
         return NextResponse.json({ success: true });
     } catch (err: any) {
         console.error('Progress POST error:', err);
-        return NextResponse.json({ error: err.message }, { status: 500 });
+        return NextResponse.json({ success: false, error: err.message }, { status: 500 });
     }
 }
 
@@ -38,19 +35,17 @@ export async function GET(request: Request) {
             return NextResponse.json({ error: 'userId required' }, { status: 400 });
         }
 
-        // Fetch test results (ordered by date)
-        const { data: tests } = await supabase
-            .from('test_results')
-            .select('*')
-            .eq('user_id', userId)
-            .order('created_at', { ascending: true });
+        await connectDB();
 
-        // Fetch concept mastery / weaknesses
-        const { data: mastery } = await supabase
-            .from('user_concept_mastery')
-            .select('*')
-            .eq('user_id', userId)
-            .order('error_weight', { ascending: false });
+        // Fetch test results ordered by date
+        const tests = await TestResult.find({ user_id: userId })
+            .sort({ created_at: 1 })
+            .lean();
+
+        // Fetch concept mastery sorted by error_weight desc
+        const mastery = await ConceptMastery.find({ user_id: userId })
+            .sort({ error_weight: -1 })
+            .lean();
 
         return NextResponse.json({
             tests: tests || [],
