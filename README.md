@@ -49,22 +49,22 @@ Tests reveal gaps → Gaps drive revision → Revision uses curated resources �
 
 ## Key Features
 
-### * Precision Testing
+### **1. Precision Testing**
 AI-generated assessments that adapt to your weaknesses. Every wrong answer is diagnosed — questions aren't random, they target historically common conceptual misunderstandings.
 
-### * Gold Standard Curation
+### **2. Gold Standard Curation**
 Powered by Google Search grounding — automatically filters and maps the most intuitive, high-quality resources from Khan Academy, MIT OCW, 3Blue1Brown, and more.
 
-### * Live Progress Tracking
+### **3. Live Progress Tracking**
 Real-time score trends, concept strength radar charts, and weakness analysis — all stored persistently so you can see exactly how your understanding evolves.
 
-### * Timed Tests with Buzzer Alerts
+### **4.Timed Tests with Buzzer Alerts**
 Configurable time limits (5–30 min or unlimited), countdown display with color-coded urgency, and Web Audio API buzzer warnings at 50%, 25%, and 10% remaining.
 
-### * Math Rendering
+### **5. Math Rendering**
 Full LaTeX support via KaTeX for inline (`$...$`) and display (`$$...$$`) math — fractions, integrals, Greek letters, and more render beautifully in questions and explanations.
 
-### * Adaptive Learning
+### **6. Adaptive Learning**
 The more you use reSOLVE, the smarter it gets. Your concept mastery data feeds back into test generation, creating increasingly targeted assessments.
 
 ---
